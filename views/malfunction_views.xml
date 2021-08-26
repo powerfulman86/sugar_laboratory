@@ -1,0 +1,57 @@
+<odoo>
+    <data>
+        <record id="view_malfunctions_form" model="ir.ui.view">
+            <field name="name">lab.malfunctions.form</field>
+            <field name="model">lab.malfunctions</field>
+            <field name="arch" type="xml">
+                <form string="Malfunctions Types">
+                    <sheet>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                                attrs="{'invisible': [('active', '=', True)]}"/>
+                        <group row="2">
+                            <group>
+                                <field name="active" invisible="1"/>
+                                <field name="internal_reference"/>
+                                <field name="name"/>
+                            </group>
+                            <field name="notes" placeholder="Notes ..."/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_malfunctions_list" model="ir.ui.view">
+            <field name="name">lab.malfunctions.list</field>
+            <field name="model">lab.malfunctions</field>
+            <field name="arch" type="xml">
+                <tree string="Malfunctions Types">
+                    <field name="internal_reference"/>
+                    <field name="name"/>
+                    <field name="notes"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_malfunction_type_list" model="ir.actions.act_window">
+            <field name="name">Malfunction Types</field>
+            <field name="res_model">lab.malfunctions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Malfunction Type
+                </p>
+                <p>
+                    Malfunction Types allow you to Create New Branch Malfunctions.
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>

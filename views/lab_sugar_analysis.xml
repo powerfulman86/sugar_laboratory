@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="lab_sugar_analysis_view_form" model="ir.ui.view">
+            <field name="name">lab_sugar_analysis_view_form</field>
+            <field name="model">lab.sugar.analysis</field>
+            <field name="arch" type="xml">
+                <form string="lab_sugar_analysis_view_form">
+                    <header>
+                        <button class="oe_highlight" name="action_branch_approved" states="draft" type="object"
+                                string="Branch Approve"/>
+                        <button class="oe_highlight" name="action_dept_approved" states="branchApproved" type="object"
+                                string="Dept. Approve"/>
+                        <button class="oe_highlight" name="action_approved" states="deptApproved" type="object"
+                                string="Approve"/>
+                        <button class="oe_highlight" name="action_cancel" states="draft" type="object" string="Cancel"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h3>
+                                <field name="name" readonly="1"/>
+                            </h3>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="branch_id" options="{'no_create': True}"/>
+                                <field name="season_id" options="{'no_create': True}"/>
+                            </group>
+                            <group>
+                                <field name="entry_id"/>
+                                <field name="entry_date"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Details">
+                                <group>
+                                    <group>
+                                        <field name="can_crashed_ton"/>
+                                        <field name="can_sweetness"/>
+                                        <field name="juice_mix_purity"/>
+                                        <field name="juice_main_val"/>
+                                        <field name="juice_lab_val"/>
+                                        <field name="first_squeeze_extract"/>
+                                        <field name="berx_juice_mix"/>
+                                        <field name="extract_125_fiber"/>
+                                        <field name="sugar_a_ton"/>
+                                        <field name="sugar_brown_ton"/>
+                                        <field name="sugar_b_ton"/>
+                                        <field name="sugar_produced_ton"/>
+                                        <field name="can_sugar_rate"/>
+                                        <field name="sugar_a_colour"/>
+                                        <field name="sugar_b_colour"/>
+                                        <field name="moulas_qty_ton"/>
+                                        <field name="moulas_brix"/>
+                                        <field name="moulas_purity"/>
+                                        <field name="lose_moulas"/>
+                                        <field name="lose_bagas"/>
+                                        <field name="lose_mud"/>
+                                        <field name="lose_total"/>
+                                        <field name="water_raw_fiber"/>
+                                        <field name="bagas_humidity"/>
+                                        <field name="brix_sherbat"/>
+                                        <field name="juice_clear_lees"/>
+                                        <field name="steam_amount"/>
+                                        <field name="fuel_coal_qty"/>
+                                        <field name="mazout_used"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Notes">
+                                <field name="entry_notes" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="lab_sugar_analysis_view_tree" model="ir.ui.view">
+            <field name="name">lab_sugar_analysis_view_tree</field>
+            <field name="model">lab.sugar.analysis</field>
+            <field name="arch" type="xml">
+                <tree string="Sugar Lab Analysis">
+                    <field name="name"/>
+                    <field name="branch_id"/>
+                    <field name="entry_id"/>
+                    <field name="entry_date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_sugar_analysis" model="ir.actions.act_window">
+            <field name="name">Sugar Lab Analysis</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lab.sugar.analysis</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new sugar lab analysis
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>
