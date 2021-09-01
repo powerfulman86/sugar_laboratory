@@ -14,6 +14,7 @@
         'views/malfunction_branch_view.xml',
         'views/lab_season.xml',
         'views/lab_sugar_analysis.xml',
+        'report/lab_sugar_analysis_report_view.xml',
         'views/lab_menu_views.xml',
     ],
     'images': ['static/description/icon.png'],

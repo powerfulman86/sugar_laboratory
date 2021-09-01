@@ -1,0 +1,949 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* sugar_laboratory
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-31 10:34+0000\n"
+"PO-Revision-Date: 2021-08-31 10:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__access_warning
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__access_warning
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__access_warning
+msgid "Access warning"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__message_needaction
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__message_needaction
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__message_needaction
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__active
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__active
+msgid "Active"
+msgstr "نشط"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__activity_ids
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__activity_ids
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__activity_ids
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__activity_ids
+msgid "Activities"
+msgstr "الانشطة"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__activity_exception_decoration
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__activity_exception_decoration
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__activity_exception_decoration
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__activity_state
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__activity_state
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__activity_state
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_form
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_transaction_type_form
+msgid "Approve"
+msgstr "اعتماد"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_malfunctions_branch__state__approved
+#: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis__state__approved
+#: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis_report__state__approved
+msgid "Approved"
+msgstr "تم الاعتماد"
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_malfunctions_form
+msgid "Archived"
+msgstr "ملغى"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__message_attachment_count
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__message_attachment_count
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__message_attachment_count
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__message_attachment_count
+msgid "Attachment Count"
+msgstr "عدد المرفقات"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__bagas_humidity
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__bagas_humidity
+msgid "Bagas Humidity"
+msgstr "رطوبة الباجاس"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__lose_bagas
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__lose_bagas
+msgid "Bagas Lose"
+msgstr "فقد الباجاس"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__berx_juice_mix
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__berx_juice_mix
+msgid "Berx Juice Mix"
+msgstr "بركس العصير الخليط"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__branch_id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__branch_id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__branch_id
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_search
+msgid "Branch"
+msgstr "الفرع"
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_form
+msgid "Branch Approve"
+msgstr "موافقة الفرع"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis__state__branchapproved
+#: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis_report__state__branchapproved
+msgid "Branch Approved"
+msgstr "تمت موافقة الفرع"
+
+#. module: sugar_laboratory
+#: model_terms:ir.actions.act_window,help:sugar_laboratory.action_malfunction_branch
+#: model:ir.actions.act_window,name:sugar_laboratory.action_malfunction_branch
+#: model:ir.ui.menu,name:sugar_laboratory.menu_malfunction_branch
+msgid "Branch Malfunction"
+msgstr "عطل الفرع"
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_malfunctions_branch_list
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_transaction_type_form
+msgid "Branch Malfunctions"
+msgstr "اعطال الفرع"
+
+#. module: sugar_laboratory
+#: model:res.groups,name:sugar_laboratory.sugar_lab_branch_manager
+msgid "Branch Manager"
+msgstr "مدير الفرع"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__brix_sherbat
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__brix_sherbat
+msgid "Brix Sherbat"
+msgstr "بركس الشربات"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__can_crashed_ton
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__can_crashed_ton
+msgid "Can Crashed / Ton"
+msgstr "القصب المعصور - طن"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__can_sugar_rate
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__can_sugar_rate
+msgid "Can Sugar Rate"
+msgstr "ناتج السكر % قصب"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_malfunctions_branch__state__cancel
+#: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis__state__cancel
+#: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis_report__state__cancel
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_form
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_transaction_type_form
+msgid "Cancel"
+msgstr "الغاء"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__child_ids
+msgid "Child Ids"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.ui.menu,name:sugar_laboratory.menu_configuration
+msgid "Configuration"
+msgstr "اعدادات"
+
+#. module: sugar_laboratory
+#: model_terms:ir.actions.act_window,help:sugar_laboratory.action_malfunction_branch
+msgid "Create a new Branch Malfunction"
+msgstr "تسجيل عطل جديد على مستوى الفرع"
+
+#. module: sugar_laboratory
+#: model_terms:ir.actions.act_window,help:sugar_laboratory.action_malfunction_type_list
+msgid "Create a new Malfunction Type"
+msgstr "انشاء نوع اعطال جديد"
+
+#. module: sugar_laboratory
+#: model_terms:ir.actions.act_window,help:sugar_laboratory.action_sugar_analysis
+msgid "Create a new sugar lab analysis"
+msgstr "تسجبل يومية تحليل معمل سكر"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__create_uid
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__create_uid
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__create_uid
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__create_uid
+msgid "Created by"
+msgstr "انشئ بواسطة"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__create_date
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__create_date
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__create_date
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__create_date
+msgid "Created on"
+msgstr "تم الانشاء في"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions__access_url
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions_branch__access_url
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_sugar_analysis__access_url
+msgid "Customer Portal URL"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.ui.menu,name:sugar_laboratory.menu_dashboard
+msgid "DashBoard"
+msgstr "لوحة التحكم"
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_form
+msgid "Dept. Approve"
+msgstr "اعتماد الادارة"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis__state__deptapproved
+#: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis_report__state__deptapproved
+msgid "Dept. Approved"
+msgstr "تم الاعتماد من الادارة"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__name
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__name
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__name
+msgid "Description"
+msgstr "الوصف"
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_form
+msgid "Details"
+msgstr "التفاصيل"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__display_name
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__display_name
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__display_name
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__display_name
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__display_name
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report_saleproforma__display_name
+msgid "Display Name"
+msgstr "الاسم المستخدم"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_malfunctions_branch__state__draft
+#: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis__state__draft
+#: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis_report__state__draft
+msgid "Draft"
+msgstr "مسوده"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__date_end
+msgid "End Date"
+msgstr "تاريخ النهايه"
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_search
+msgid "Entry"
+msgstr "اليومية"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__entry_id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__entry_id
+msgid "Entry Number"
+msgstr "رقم اليومية"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__extract_125_fiber
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__extract_125_fiber
+msgid "Extract 12.5 Fiber"
+msgstr "استخلاص 12.5% الياف"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__first_squeeze_extract
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__first_squeeze_extract
+msgid "First Squeeze Extract"
+msgstr "استخلاص العصارة الاولى"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__message_follower_ids
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__message_follower_ids
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__message_follower_ids
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__message_follower_ids
+msgid "Followers"
+msgstr "المتابعين"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__message_channel_ids
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__message_channel_ids
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__message_channel_ids
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "المتابعين"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__message_partner_ids
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__message_partner_ids
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__message_partner_ids
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__year_from
+msgid "From"
+msgstr "من"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__fuel_coal_qty
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__fuel_coal_qty
+msgid "Fuel Coal Qty"
+msgstr "الوقود كجم فحم"
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_search
+msgid "Group By"
+msgstr "تجميع بواسطة"
+
+#. module: sugar_laboratory
+#: model:ir.module.category,description:sugar_laboratory.module_category_sugar_laboratory
+msgid "Helps you manage Sugar Lab."
+msgstr "المساعدة في يومية معامل السكر"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report_saleproforma__id
+msgid "ID"
+msgstr "الرقم"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__activity_exception_icon
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__activity_exception_icon
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__activity_exception_icon
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions__activity_exception_icon
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions_branch__activity_exception_icon
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_season__activity_exception_icon
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_sugar_analysis__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions__message_needaction
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions__message_unread
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions_branch__message_needaction
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions_branch__message_unread
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_season__message_needaction
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_season__message_unread
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_sugar_analysis__message_needaction
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_sugar_analysis__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions__message_has_error
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions__message_has_sms_error
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions_branch__message_has_error
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions_branch__message_has_sms_error
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_season__message_has_error
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_season__message_has_sms_error
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_sugar_analysis__message_has_error
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_sugar_analysis__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__internal_reference
+msgid "Internal Reference"
+msgstr "المرجع الداخلي"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__message_is_follower
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__message_is_follower
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__message_is_follower
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__juice_clear_lees
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__juice_clear_lees
+msgid "Juice Clear Lees"
+msgstr "عكارة العصير الرائق"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__juice_lab_val
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__juice_lab_val
+msgid "Juice Lab Val"
+msgstr "العصير الرئيسي / معامل"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__juice_main_val
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__juice_main_val
+msgid "Juice Main Val"
+msgstr "العصير الرئيسي % ق"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__juice_mix_purity
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__juice_mix_purity
+msgid "Juice mixed Purity"
+msgstr "نقاوة العصير خليط"
+
+#. module: sugar_laboratory
+#: model:ir.model,name:sugar_laboratory.model_lab_malfunctions_branch
+msgid "Lab Branch Malfunctions"
+msgstr "اعطال الفرع"
+
+#. module: sugar_laboratory
+#: model:ir.model,name:sugar_laboratory.model_lab_sugar_analysis
+msgid "Lab Sugar Analysis"
+msgstr "معامل السكر"
+
+#. module: sugar_laboratory
+#: model:ir.model,name:sugar_laboratory.model_lab_sugar_analysis_report
+#: model:ir.model,name:sugar_laboratory.model_lab_sugar_analysis_report_saleproforma
+msgid "Lab Sugar Analysis Report"
+msgstr "تقرير تحليل معمل السكر"
+
+#. module: sugar_laboratory
+#: model:ir.model,name:sugar_laboratory.model_lab_season
+msgid "Lab season"
+msgstr "الموسم"
+
+#. module: sugar_laboratory
+#: model:ir.model,name:sugar_laboratory.model_lab_malfunctions
+msgid "Laboratory Malfunctions"
+msgstr "الاعطال"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions____last_update
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch____last_update
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season____last_update
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis____last_update
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report____last_update
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report_saleproforma____last_update
+msgid "Last Modified on"
+msgstr "توقيت اخر تعديل"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__write_uid
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__write_uid
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__write_uid
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__write_uid
+msgid "Last Updated by"
+msgstr "اخر تعديل بواسطة"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__write_date
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__write_date
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__write_date
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__write_date
+msgid "Last Updated on"
+msgstr "تاريخ اخر تعديل"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__message_main_attachment_id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__message_main_attachment_id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__message_main_attachment_id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "مرفق رئيسي"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__malfunction_id
+msgid "Malfunction"
+msgstr "اعطال"
+
+#. module: sugar_laboratory
+#: model:ir.actions.act_window,name:sugar_laboratory.action_malfunction_type_list
+#: model:ir.ui.menu,name:sugar_laboratory.menu_malfunction_type
+#: model:ir.ui.menu,name:sugar_laboratory.menu_sugar_laboratory
+msgid "Malfunction Types"
+msgstr "انواع الاعطال"
+
+#. module: sugar_laboratory
+#: model_terms:ir.actions.act_window,help:sugar_laboratory.action_malfunction_type_list
+msgid "Malfunction Types allow you to Create New Branch Malfunctions."
+msgstr "انواع الاعطال تساعد في تسجيل الاعطال للفرع"
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_malfunctions_form
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_malfunctions_list
+msgid "Malfunctions Types"
+msgstr "انواع الاعطال"
+
+#. module: sugar_laboratory
+#: model:res.groups,name:sugar_laboratory.sugar_lab_manager
+msgid "Manager"
+msgstr "المدير"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__mazout_used
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__mazout_used
+msgid "Mazout Used"
+msgstr "المازوت المستهلك"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__message_has_error
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__message_has_error
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__message_has_error
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__message_ids
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__message_ids
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__message_ids
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__moulas_brix
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__moulas_brix
+msgid "Moulas Brix"
+msgstr "بركس المولاس"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__lose_moulas
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__lose_moulas
+msgid "Moulas Lose"
+msgstr "فقد المولاس"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__moulas_purity
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__moulas_purity
+msgid "Moulas Purity"
+msgstr "نقاوة المولاس"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__moulas_qty_ton
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__moulas_qty_ton
+msgid "Moulas Qty\\Ton"
+msgstr "كمية المولاس / طن"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__lose_mud
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__lose_mud
+msgid "Mud Lose"
+msgstr "فقد الطينة"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__name
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__name
+msgid "Name"
+msgstr "الاسم"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__activity_date_deadline
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__activity_date_deadline
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__activity_date_deadline
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__activity_summary
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__activity_summary
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__activity_summary
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__activity_type_id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__activity_type_id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__activity_type_id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__notes
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__notes
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__entry_notes
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_sugar_analysis__entry_notes
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_form
+msgid "Notes"
+msgstr "ملاحظات"
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_malfunctions_form
+msgid "Notes ..."
+msgstr "ملاحظات ..."
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_transaction_type_form
+msgid "Notes ....."
+msgstr "ملاحظات ..."
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__message_needaction_counter
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__message_needaction_counter
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__message_needaction_counter
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__message_has_error_counter
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__message_has_error_counter
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__message_has_error_counter
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions__message_needaction_counter
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions_branch__message_needaction_counter
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_season__message_needaction_counter
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_sugar_analysis__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions__message_has_error_counter
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions_branch__message_has_error_counter
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_season__message_has_error_counter
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_sugar_analysis__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions__message_unread_counter
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions_branch__message_unread_counter
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_season__message_unread_counter
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_sugar_analysis__message_unread_counter
+msgid "Number of unread messages"
+msgstr ""
+
+#. module: sugar_laboratory
+#: code:addons/sugar_laboratory/models/lab_season.py:0
+#, python-format
+msgid "Please Enter Correct Year Format"
+msgstr "يجب تسجيل السنة بشكل صحيح"
+
+#. module: sugar_laboratory
+#: code:addons/sugar_laboratory/models/lab_season.py:0
+#, python-format
+msgid "Please Enter Year Format In Digits"
+msgstr "يجب تسجيل السنة بارقام فقط"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__access_url
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__access_url
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__access_url
+msgid "Portal Access URL"
+msgstr ""
+
+#. module: sugar_laboratory
+#: code:addons/sugar_laboratory/models/lab_malfunctions.py:0
+#, python-format
+msgid "Record Can't be deleted, it's not in draft status"
+msgstr "لا يمكن حذف السجل لانه ليس مسوده"
+
+#. module: sugar_laboratory
+#: model:ir.ui.menu,name:sugar_laboratory.menu_reporting
+msgid "Reporting"
+msgstr "التقارير"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__activity_user_id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__activity_user_id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__activity_user_id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__activity_user_id
+msgid "Responsible User"
+msgstr "الموظف المسئول"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__message_has_sms_error
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__message_has_sms_error
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__message_has_sms_error
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__season_id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__season_id
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_season_view_tree
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_search
+msgid "Season"
+msgstr "الموسم"
+
+#. module: sugar_laboratory
+#: code:addons/sugar_laboratory/models/lab_season.py:0
+#, python-format
+msgid "Season Can't be Duplicated"
+msgstr "لا يمكن تكرار الموسم"
+
+#. module: sugar_laboratory
+#: model:ir.actions.act_window,name:sugar_laboratory.action_season_list
+#: model:ir.ui.menu,name:sugar_laboratory.menu_season
+msgid "Seasons"
+msgstr "المواسم"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__access_token
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__access_token
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__access_token
+msgid "Security Token"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions__active
+msgid "Set active to false to hide the Malfunction without removing it."
+msgstr "تحويل السجل الى غير فعال بدون حذفه"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_season__active
+msgid "Set active to false to hide the Season without removing it."
+msgstr "تحويل السجل الى غير فعال بدون حذفه"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__date_start
+msgid "Start Date"
+msgstr "تاريخ البدايه"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__state
+msgid "Status"
+msgstr "الحاله"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions__activity_state
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions_branch__activity_state
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_season__activity_state
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_sugar_analysis__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__steam_amount
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__steam_amount
+msgid "Steam Amount"
+msgstr "كمية البخار"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__sugar_a_colour
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__sugar_a_colour
+msgid "Sugar A \\ Colour"
+msgstr "لون سكر أ "
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__sugar_a_ton
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__sugar_a_ton
+msgid "Sugar A \\ Ton"
+msgstr "سكر أ طن"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__sugar_b_colour
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__sugar_b_colour
+msgid "Sugar B \\ Colour"
+msgstr " لون سكر ب"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__sugar_b_ton
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__sugar_b_ton
+msgid "Sugar B \\ Ton"
+msgstr "سكر ب طن"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__sugar_brown_ton
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__sugar_brown_ton
+msgid "Sugar Brown \\ Ton"
+msgstr "سكر بني طن"
+
+#. module: sugar_laboratory
+#: model:ir.module.category,name:sugar_laboratory.module_category_sugar_laboratory
+msgid "Sugar Lab"
+msgstr "معمل سكر"
+
+#. module: sugar_laboratory
+#: model:ir.actions.act_window,name:sugar_laboratory.action_sugar_analysis
+#: model:ir.ui.menu,name:sugar_laboratory.menu_analysis_branch
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_tree
+msgid "Sugar Lab Analysis"
+msgstr "تحليل معمل سكر"
+
+#. module: sugar_laboratory
+#: model:ir.actions.act_window,name:sugar_laboratory.action_sugar_analysis_report
+#: model:ir.ui.menu,name:sugar_laboratory.menu_sugar_analysis_report
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_graph
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_pivot
+msgid "Sugar Lab Analysis Report"
+msgstr "تقرير تحليل معمل السكر"
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_search
+msgid "Sugar Lab Analysis Report Search"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.ui.menu,name:sugar_laboratory.sugar_laboratory
+msgid "Sugar Laboratory"
+msgstr "معامل السكر"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__sugar_produced_ton
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__sugar_produced_ton
+msgid "Sugar Produced - Ton"
+msgstr "ناتج السكر / طن"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__can_sweetness
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__can_sweetness
+msgid "Sweetness"
+msgstr "الحلاوة"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_sugar_analysis__branch_id
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_sugar_analysis__season_id
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_sugar_analysis_report__season_id
+msgid "This is branch to set"
+msgstr "يجب تسجيل الفرع"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions_branch__branch_id
+msgid "This is branch to set malfunction for"
+msgstr "اختيار الفرع المطلوب تسجيل عطل له"
+
+#. module: sugar_laboratory
+#: model_terms:ir.actions.act_window,help:sugar_laboratory.action_sugar_analysis_report
+msgid "This report performs analysis on Sugar Lab Transaction."
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__year_to
+msgid "To"
+msgstr "الى"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__lose_total
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__lose_total
+msgid "Total Lose"
+msgstr "اجمالي الفقد"
+
+#. module: sugar_laboratory
+#: model:ir.ui.menu,name:sugar_laboratory.menu_Transaction
+msgid "Transaction"
+msgstr "الحركات"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__entry_date
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__entry_date
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_search
+msgid "Transaction Date"
+msgstr "تاريخ الحركة"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions__activity_exception_decoration
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions_branch__activity_exception_decoration
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_season__activity_exception_decoration
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_sugar_analysis__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__message_unread
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__message_unread
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__message_unread
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__message_unread
+msgid "Unread Messages"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__message_unread_counter
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__message_unread_counter
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__message_unread_counter
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:res.groups,name:sugar_laboratory.sugar_lab_user
+msgid "User"
+msgstr "المستخدم"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__water_raw_fiber
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__water_raw_fiber
+msgid "Water Raw Fiber"
+msgstr "مياه الرش الياف"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__website_message_ids
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__website_message_ids
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__website_message_ids
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions__website_message_ids
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions_branch__website_message_ids
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_season__website_message_ids
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_sugar_analysis__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_form
+msgid "lab_sugar_analysis_view_form"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.season_view_form
+msgid "season_form"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__state
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__state
+msgid "state"
+msgstr "الحاله"
+
+#. module: sugar_laboratory
+#: code:addons/sugar_laboratory/models/lab_season.py:0
+#, python-format
+msgid ""
+"لابد أن تكون السنة فى الحقل <إلى> أكبر من السنة فى الحقل <من> بمقدار سنة "
+"واحدة فقط"
+msgstr ""
