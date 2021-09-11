@@ -25,6 +25,9 @@
         <menuitem id="menu_sugar_analysis_report" name="Sugar Lab Analysis Report" parent="menu_reporting"
                   action="action_sugar_analysis_report" sequence="2"/>
 
+        <menuitem id="menu_sugar_analysis_net_report" name="Sugar Lab Analysis Net Report" parent="menu_reporting"
+                  action="action_sugar_analysis_net_report" sequence="3"/>
+
         <menuitem id="menu_sugar_laboratory" parent="menu_dashboard" sequence="1"
                   action="action_malfunction_type_list"/>
     </data>

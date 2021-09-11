@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_sugar_lab_analysis_net_search" model="ir.ui.view">
+            <field name="name">lab.sugar.analysis.net.report.search</field>
+            <field name="model">lab.sugar.analysis.net.report</field>
+            <field name="arch" type="xml">
+                <search string="Sugar Lab Analysis Net Report Search">
+                    <filter name="season_id" string="Season"/>
+                    <filter name="branch_id" string="Branch"/>
+                    <filter name="entry_date" string="Transaction Date"/>
+                    <field name="season_id"/>
+                    <field name="branch_id"/>
+                    <field name="entry_date"/>
+                    <field name="state"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Season" name="Season" context="{'group_by':'season_id'}"/>
+                        <filter string="Branch" name="branch" context="{'group_by':'branch_id'}"/>
+                        <filter string="Entry" name="Entry" context="{'group_by':'entry_id'}"/>
+                        <filter string="Transaction Date" name="entry_date" context="{'group_by':'entry_date'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="view_sugar_lab_analysis_net_pivot" model="ir.ui.view">
+            <field name="name">lab.sugar.analysis.net.report.pivot</field>
+            <field name="model">lab.sugar.analysis.net.report</field>
+            <field name="arch" type="xml">
+                <pivot string="Sugar Lab Analysis Net Report" disable_linking="True">
+                    <field name="season_id" type="row"/>
+                    <field name="branch_id" type="row"/>
+                    <field name="entry_id" type="row"/>
+                    <field name="entry_date" interval="month" type="row"/>
+                    <field name="can_crashed_ton" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record id="view_sugar_lab_analysis_net_graph" model="ir.ui.view">
+            <field name="name">lab.sugar.analysis.net.report.graph</field>
+            <field name="model">lab.sugar.analysis.net.report</field>
+            <field name="arch" type="xml">
+                <graph string="Sugar Lab Analysis Net Report" type="line">
+                    <field name="entry_date" type="row" interval="day"/>
+                    <field name="can_crashed_ton" type="measure"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="action_sugar_analysis_net_report" model="ir.actions.act_window">
+            <field name="name">Sugar Lab Analysis Net Report</field>
+            <field name="res_model">lab.sugar.analysis.net.report</field>
+            <field name="view_mode">graph,pivot</field>
+            <field name="view_id"/>
+            <!--  force empty  -->
+            <field name="help">This report performs Net analysis on Sugar Lab Transaction.</field>
+        </record>
+
+    </data>
+</odoo>
