@@ -12,7 +12,6 @@
                     <field name="season_id"/>
                     <field name="branch_id"/>
                     <field name="entry_date"/>
-                    <field name="state"/>
                     <group expand="1" string="Group By">
                         <filter string="Season" name="Season" context="{'group_by':'season_id'}"/>
                         <filter string="Branch" name="branch" context="{'group_by':'branch_id'}"/>
