@@ -65,9 +65,7 @@ class LabSugarAnalysisNetReport(models.Model):
         groupby_ = """
                     l.name,
                     l.branch_id,
-                    l.entry_id,
                     l.entry_date,
-                    l.state,
                     l.season_id %s
                 """ % groupby
 
