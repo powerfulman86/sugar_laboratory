@@ -94,7 +94,7 @@ class LabSugarAnalysisReport(models.Model):
                     sum(l.juice_clear_lees) as  juice_clear_lees,
                     sum(l.steam_amount) as  steam_amount,
                     sum(l.fuel_coal_qty) as fuel_coal_qty,
-                    sum(l.mazout_used) as   mazout_used
+                    sum(l.mazout_used) as   mazout_used,
                     sum(l.gas_used) as   gas_used
                 """
 
