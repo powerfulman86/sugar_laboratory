@@ -65,6 +65,7 @@
                                         <field name="steam_amount"/>
                                         <field name="fuel_coal_qty"/>
                                         <field name="mazout_used"/>
+                                        <field name="gas_used"/>
                                     </group>
                                 </group>
                             </page>
@@ -87,6 +88,7 @@
             <field name="model">lab.sugar.analysis</field>
             <field name="arch" type="xml">
                 <tree string="Sugar Lab Analysis">
+                    <field name="season_id"/>
                     <field name="name"/>
                     <field name="branch_id"/>
                     <field name="entry_id"/>

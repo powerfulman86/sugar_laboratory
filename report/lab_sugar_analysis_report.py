@@ -53,6 +53,7 @@ class LabSugarAnalysisReport(models.Model):
     steam_amount = fields.Float(string="Steam Amount", required=False, )
     fuel_coal_qty = fields.Float(string="Fuel Coal Qty", required=False, )
     mazout_used = fields.Float(string="Mazout Used", required=False, )
+    gas_used = fields.Float(string="Gas Used", required=False, )
 
     def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
         with_ = ("WITH %s" % with_clause) if with_clause else ""
@@ -94,6 +95,7 @@ class LabSugarAnalysisReport(models.Model):
                     sum(l.steam_amount) as  steam_amount,
                     sum(l.fuel_coal_qty) as fuel_coal_qty,
                     sum(l.mazout_used) as   mazout_used
+                    sum(l.gas_used) as   gas_used
                 """
 
         for field in fields.values():

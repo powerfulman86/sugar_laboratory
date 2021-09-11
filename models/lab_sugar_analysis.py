@@ -60,6 +60,7 @@ class LabSugarAnalysis(models.Model):
     steam_amount = fields.Float(string="Steam Amount", required=False, default=0)
     fuel_coal_qty = fields.Float(string="Fuel Coal Qty", required=False, default=0)
     mazout_used = fields.Float(string="Mazout Used", required=False, default=0)
+    gas_used = fields.Float(string="Gas Used", required=False, default=0)
 
     @api.depends('lose_moulas', 'lose_bagas', 'lose_mud')
     def _calculate_total_lose(self):
