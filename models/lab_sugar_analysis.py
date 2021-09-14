@@ -51,7 +51,7 @@ class LabSugarAnalysis(models.Model):
     lose_bagas = fields.Float(string="Bagas Lose", required=False, default=0)
     lose_mud = fields.Float(string="Mud Lose", required=False, default=0)
     lose_total = fields.Float(string="Total Lose", required=False, readonly=1, compute="_calculate_total_lose",
-                              default=0,store=True)
+                              default=0, store=True)
     water_raw_fiber = fields.Float(string="Water Raw Fiber", required=False, default=0)
     bagas_humidity = fields.Float(string="Bagas Humidity", required=False, default=0)
     brix_sherbat = fields.Float(string="Brix Sherbat", required=False, default=0)
@@ -60,6 +60,15 @@ class LabSugarAnalysis(models.Model):
     fuel_coal_qty = fields.Float(string="Fuel Coal Qty", required=False, default=0)
     mazout_used = fields.Float(string="Mazout Used", required=False, default=0)
     gas_used = fields.Float(string="Gas Used", required=False, default=0)
+    steam_avr = fields.Float(string="Steam Per Ton", required=False, compute="_calculate_steam_avr",
+                             store=True)
+
+    @api.depends('steam_amount', 'can_crashed_ton')
+    def _calculate_steam_avr(self):
+        for rec in self:
+            if rec.steam_amount and rec.can_crashed_ton:
+                if rec.can_crashed_ton > 0:
+                    rec.steam_avr = ((rec.steam_amount or 0.0) * 1000) / (rec.can_crashed_ton or 0.0)
 
     @api.depends('lose_moulas', 'lose_bagas', 'lose_mud')
     def _calculate_total_lose(self):

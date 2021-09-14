@@ -35,15 +35,8 @@
                         <notebook>
                             <page string="Details">
                                 <group>
-                                    <group>
+                                    <group string="Sugar">
                                         <field name="can_crashed_ton"/>
-                                        <field name="can_sweetness"/>
-                                        <field name="juice_mix_purity"/>
-                                        <field name="juice_main_val"/>
-                                        <field name="juice_lab_val"/>
-                                        <field name="first_squeeze_extract"/>
-                                        <field name="berx_juice_mix"/>
-                                        <field name="extract_125_fiber"/>
                                         <field name="sugar_a_ton"/>
                                         <field name="sugar_brown_ton"/>
                                         <field name="sugar_b_ton"/>
@@ -51,18 +44,34 @@
                                         <field name="can_sugar_rate"/>
                                         <field name="sugar_a_colour"/>
                                         <field name="sugar_b_colour"/>
+                                    </group>
+                                    <group string="Lab">
+                                        <field name="can_sweetness"/>
+                                        <field name="juice_mix_purity"/>
+                                        <field name="juice_main_val"/>
+                                        <field name="juice_lab_val"/>
+                                        <field name="first_squeeze_extract"/>
+                                        <field name="berx_juice_mix"/>
+                                        <field name="extract_125_fiber"/>
+                                        <field name="lose_mud"/>
+                                        <field name="lose_total"/>
+                                        <field name="water_raw_fiber"/>
+                                        <field name="brix_sherbat"/>
+                                        <field name="juice_clear_lees"/>
+                                    </group>
+                                    <group string="Moulas">
                                         <field name="moulas_qty_ton"/>
                                         <field name="moulas_brix"/>
                                         <field name="moulas_purity"/>
                                         <field name="lose_moulas"/>
+                                    </group>
+                                    <group string="Bagas">
                                         <field name="lose_bagas"/>
-                                        <field name="lose_mud"/>
-                                        <field name="lose_total"/>
-                                        <field name="water_raw_fiber"/>
                                         <field name="bagas_humidity"/>
-                                        <field name="brix_sherbat"/>
-                                        <field name="juice_clear_lees"/>
+                                    </group>
+                                    <group string="Fuel">
                                         <field name="steam_amount"/>
+                                        <field name="steam_avr"/>
                                         <field name="fuel_coal_qty"/>
                                         <field name="mazout_used"/>
                                         <field name="gas_used"/>

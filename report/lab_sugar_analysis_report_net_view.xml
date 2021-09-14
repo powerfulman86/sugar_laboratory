@@ -5,7 +5,7 @@
             <field name="name">lab.sugar.analysis.net.report.search</field>
             <field name="model">lab.sugar.analysis.net.report</field>
             <field name="arch" type="xml">
-                <search string="Sugar Lab Analysis Net Report Search">
+                <search string="Lab Analysis Net Report Search">
                     <filter name="season_id" string="Season"/>
                     <filter name="branch_id" string="Branch"/>
                     <filter name="entry_date" string="Transaction Date"/>
@@ -25,10 +25,9 @@
             <field name="name">lab.sugar.analysis.net.report.pivot</field>
             <field name="model">lab.sugar.analysis.net.report</field>
             <field name="arch" type="xml">
-                <pivot string="Sugar Lab Analysis Net Report" disable_linking="True">
+                <pivot string="Lab Analysis Net Report" disable_linking="True">
                     <field name="season_id" type="row"/>
                     <field name="branch_id" type="row"/>
-                    <field name="entry_date" interval="month" type="row"/>
                     <field name="can_crashed_ton" type="measure"/>
                 </pivot>
             </field>
@@ -38,7 +37,7 @@
             <field name="name">lab.sugar.analysis.net.report.graph</field>
             <field name="model">lab.sugar.analysis.net.report</field>
             <field name="arch" type="xml">
-                <graph string="Sugar Lab Analysis Net Report" type="line">
+                <graph string="Lab Analysis Net Report" type="line">
                     <field name="entry_date" type="row" interval="day"/>
                     <field name="can_crashed_ton" type="measure"/>
                 </graph>
@@ -46,7 +45,7 @@
         </record>
 
         <record id="action_sugar_analysis_net_report" model="ir.actions.act_window">
-            <field name="name">Sugar Lab Analysis Net Report</field>
+            <field name="name">Lab Analysis Net Report</field>
             <field name="res_model">lab.sugar.analysis.net.report</field>
             <field name="view_mode">graph,pivot</field>
             <field name="view_id"/>
