@@ -27,6 +27,8 @@ class LabSugarAnalysisNetReport(models.Model):
     fuel_coal_qty = fields.Float(string="Fuel Coal Qty", required=False, )
     mazout_used = fields.Float(string="Mazout Used", required=False, )
     gas_used = fields.Float(string="Gas Used", required=False, )
+    steam_amount = fields.Float(string="Steam Amount", required=False, default=0)
+    steam_avr = fields.Float(string="Steam Per Ton")
 
     def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
         with_ = ("WITH %s" % with_clause) if with_clause else ""
@@ -49,7 +51,9 @@ class LabSugarAnalysisNetReport(models.Model):
                     sum(l.moulas_qty_ton) as  moulas_qty_ton,
                     sum(l.fuel_coal_qty) as fuel_coal_qty,
                     sum(l.mazout_used) as   mazout_used,
-                    sum(l.gas_used) as   gas_used
+                    sum(l.gas_used) as   gas_used,
+                    sum(l.steam_amount) as   steam_amount,
+                    sum(l.steam_avr) as   steam_avr
                 """
 
         for field in fields.values():
@@ -76,8 +80,8 @@ class LabSugarAnalysisNetReport(models.Model):
         tools.drop_view_if_exists(self.env.cr, self._table)
         self.env.cr.execute("""CREATE or REPLACE VIEW %s as (%s)""" % (self._table, self._query()))
 
-    class SaleNetReportProforma(models.AbstractModel):
-        _name = 'lab.sugar.analysis.report_saleproforma'
+    class LabSugarAnalysisNetReport(models.AbstractModel):
+        _name = 'lab.sugar.analysis.net.report'
         _description = 'Lab Sugar Analysis Net Report'
 
         def _get_report_values(self, docids, data=None):
