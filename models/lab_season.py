@@ -8,7 +8,7 @@ class LabSeason(models.Model):
     _name = 'lab.season'
     _inherit = ['mail.thread', 'mail.activity.mixin']
     _rec_name = "name"
-    _description = 'Lab season'
+    _description = 'Lab Season'
 
     name = fields.Char(compute='_compute_name', string="Name")
     year_from = fields.Char('From', size=4, required=True)

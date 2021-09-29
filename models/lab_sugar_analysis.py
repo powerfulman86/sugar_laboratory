@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError, UserError
 
 AVAILABLE_STATUS = [
     ('draft', 'Draft'),
@@ -19,13 +20,16 @@ class LabSugarAnalysis(models.Model):
     name = fields.Char('Description')
     branch_id = fields.Many2one(comodel_name="res.branch", string="Branch", required=True,
                                 index=True, help='This is branch to set')
-    entry_id = fields.Integer(string="Entry Number", required=True, )
-    entry_date = fields.Date(string="Transaction Date", required=True, default=fields.Date.context_today, copy=False)
+    entry_id = fields.Integer(string="Entry Number", required=True, tracking=True)
+    entry_date = fields.Date(string="Transaction Date", required=True, default=fields.Date.context_today, copy=False,
+                             tracking=True)
     state = fields.Selection(AVAILABLE_STATUS, string='state', tracking=True, default=AVAILABLE_STATUS[0][0],
                              required=True)
     season_id = fields.Many2one(comodel_name="lab.season", string="Season", required=True,
                                 index=True, help='This is branch to set')
-    entry_notes = fields.Html('Notes', help='Notes')
+    season_estimate_daily = fields.Float(string="Season Daily Estimate", required=False, )
+
+    entry_notes = fields.Html('Notes', help='Notes', tracking=True)
 
     can_crashed_ton = fields.Float(string="Can Crashed / Ton", required=True, default=0)
     can_sweetness = fields.Float(string="Sweetness", required=False, default=0)
@@ -63,6 +67,24 @@ class LabSugarAnalysis(models.Model):
     steam_avr = fields.Float(string="Steam Per Ton", required=False, compute="_calculate_steam_avr",
                              store=True)
 
+    @api.onchange('season_id', 'branch_id')
+    def get_season_estimate(self):
+        # if self.season_id:
+        #     season_status = self.env['lab.season.estimate'].search([('season_id', '=', self.season_id.id)])
+        #     if season_status:
+        #         if season_status.state != 'approved':
+        #             raise ValidationError(
+        #                 _("Season Estimate Data Is Not Approved , PLease Approve Data First"))
+        #     else:
+        #         raise ValidationError(
+        #             _("Season Estimate Data Must Be Set , PLease Record Estimate Data First"))
+
+        if self.season_id and self.branch_id:
+            branch_estimate = self.env['lab.season.estimate.line'].search(
+                [('season_id', '=', self.season_id.id), ('branch_id', '=', self.branch_id.id)])
+            # if branch_estimate:
+            self.season_estimate_daily = branch_estimate.season_estimate_daily
+
     @api.depends('steam_amount', 'can_crashed_ton')
     def _calculate_steam_avr(self):
         for rec in self:
@@ -76,7 +98,9 @@ class LabSugarAnalysis(models.Model):
 
     @api.depends('sugar_a_ton', 'sugar_b_ton')
     def _can_sugar_rate(self):
-        self.can_sugar_rate = ((((self.sugar_a_ton or 0.0) + ((self.sugar_b_ton or 0.0) * .9)) * 100) / 2)
+        if self.can_crashed_ton != 0:
+            self.can_sugar_rate = ((((self.sugar_a_ton or 0.0) + ((self.sugar_b_ton or 0.0) * .9)) * 100) / (
+                    self.can_crashed_ton or 0.0))
 
     @api.depends('sugar_a_ton', 'sugar_brown_ton', 'sugar_b_ton')
     def _compute_total_produced(self):
@@ -96,6 +120,20 @@ class LabSugarAnalysis(models.Model):
 
     @api.model
     def create(self, values):
+        entry_no = values['entry_id']
+        if entry_no == 0:
+            raise ValidationError(
+                _("Entry Number Must Be Set "))
+        else:
+            exist_branch_entry = self.env['lab.sugar.analysis'].search([
+                ('season_id', '=', values['season_id']),
+                ('branch_id', '=', values['branch_id']),
+                ('entry_id', '=', values['entry_id']),
+            ], limit=1)
+            if len(exist_branch_entry.ids) > 0:
+                raise ValidationError(
+                    _("Can not Duplicate Lab Analysis , Other in %s" % exist_branch_entry.name))
+
         res = super(LabSugarAnalysis, self).create(values)
         res.name = self.env['ir.sequence'].next_by_code('lab.sugar.analysis') or '/'
         return res

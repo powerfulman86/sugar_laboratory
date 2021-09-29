@@ -14,5 +14,12 @@
             <field name="prefix">SA/</field>
             <field name="padding">5</field>
         </record>
+
+        <record id="lab_season_estimate" model="ir.sequence">
+            <field name="name">lab.season.estimate.seq</field>
+            <field name="code">lab.season.estimate</field>
+            <field name="prefix">SE/</field>
+            <field name="padding">5</field>
+        </record>
     </data>
 </odoo>
