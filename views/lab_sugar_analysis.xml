@@ -13,7 +13,8 @@
                                 string="Dept. Approve"/>
                         <button class="oe_highlight" name="action_approved" states="deptApproved" type="object"
                                 string="Approve"/>
-                        <button class="oe_highlight" name="action_cancel" states="draft" type="object" string="Cancel"/>
+                        <button class="oe_highlight" name="action_cancel" states="draft,branchApproved,deptApproved"
+                                type="object" string="Cancel"/>
                         <field name="state" widget="statusbar"/>
                     </header>
                     <sheet>
@@ -24,8 +25,10 @@
                         </div>
                         <group>
                             <group>
-                                <field name="branch_id" options="{'no_create': True}" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
-                                <field name="season_id" options="{'no_create': True}" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="branch_id" options="{'no_create': True}"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="season_id" options="{'no_create': True}"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                 <field name="season_estimate_daily" readonly="1"/>
                             </group>
                             <group>
@@ -36,19 +39,23 @@
                         <notebook>
                             <page string="Details">
                                 <group>
-                                    <group >
+                                    <group>
                                         <field name="can_crashed_ton" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="can_sweetness" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
-                                        <field name="juice_mix_purity" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="juice_mix_purity"
+                                               attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="juice_main_val" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="juice_lab_val" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
-                                        <field name="first_squeeze_extract" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="first_squeeze_extract"
+                                               attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="berx_juice_mix" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
-                                        <field name="extract_125_fiber" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="extract_125_fiber"
+                                               attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="sugar_a_ton" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="sugar_brown_ton" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="sugar_b_ton" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
-                                        <field name="sugar_produced_ton" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="sugar_produced_ton"
+                                               attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="can_sugar_rate" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="sugar_a_colour" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="sugar_b_colour" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
@@ -62,7 +69,8 @@
                                         <field name="water_raw_fiber" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="bagas_humidity" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="brix_sherbat" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
-                                        <field name="juice_clear_lees" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="juice_clear_lees"
+                                               attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="steam_amount" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="fuel_coal_qty" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="mazout_used" attrs="{'readonly': [('state', '!=', 'draft')]}"/>

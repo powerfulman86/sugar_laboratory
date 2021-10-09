@@ -31,6 +31,6 @@
                   action="action_sugar_analysis_net_report" sequence="3"/>
 
         <menuitem id="menu_sugar_laboratory" parent="menu_dashboard" sequence="1"
-                  action="action_malfunction_type_list"/>
+                  action="action_sugar_analysis"/>
     </data>
 </odoo>
