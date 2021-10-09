@@ -1004,7 +1004,7 @@ msgstr "سكر بني طن"
 #. module: sugar_laboratory
 #: model:ir.module.category,name:sugar_laboratory.module_category_sugar_laboratory
 msgid "Sugar Lab"
-msgstr "معمل سكر"
+msgstr "الرقابة والجودة"
 
 #. module: sugar_laboratory
 #: model:ir.actions.act_window,name:sugar_laboratory.action_sugar_analysis
