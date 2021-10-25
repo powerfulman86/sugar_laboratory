@@ -61,6 +61,8 @@
                                         <field name="moulas_qty_ton" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="moulas_brix" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="moulas_purity" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="sugar_moulas_rate"
+                                               attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="lose_moulas" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="lose_bagas" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="lose_mud" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
@@ -75,6 +77,8 @@
                                         <field name="mazout_used" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="gas_used" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                         <field name="steam_avr"/>
+                                        <field name="mazout_gas_rate" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                        <field name="mazout_total" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                     </group>
                                 </group>
                             </page>

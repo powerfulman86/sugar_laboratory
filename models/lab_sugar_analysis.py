@@ -39,31 +39,34 @@ class LabSugarAnalysis(models.Model):
     first_squeeze_extract = fields.Float(string="First Squeeze Extract", required=False, default=0)
     berx_juice_mix = fields.Float(string="Berx Juice Mix", required=False, default=0)
     extract_125_fiber = fields.Float(string="Extract 12.5 Fiber", required=False, default=0)
-    sugar_a_ton = fields.Float(string="Sugar A \ Ton", required=False, default=0)
-    sugar_brown_ton = fields.Float(string="Sugar Brown \ Ton", required=False, default=0)
-    sugar_b_ton = fields.Float(string="Sugar B \ Ton", required=False, default=0)
+    sugar_a_ton = fields.Float(string="Sugar A \ Ton", required=False, default=0.0, digits=(10, 3))
+    sugar_brown_ton = fields.Float(string="Sugar Brown \ Ton", required=False, default=0.0, digits=(10, 3))
+    sugar_b_ton = fields.Float(string="Sugar B \ Ton", required=False, default=0.0, digits=(10, 3))
     sugar_produced_ton = fields.Float(string="Sugar Produced - Ton", required=False, compute="_compute_total_produced",
                                       store=True, readonly=1, default=0)
     can_sugar_rate = fields.Float(string="Can Sugar Rate", required=False, compute="_can_sugar_rate", store=True,
                                   readonly=1, default=0)
-    sugar_a_colour = fields.Float(string="Sugar A \ Colour", required=False, default=0)
-    sugar_b_colour = fields.Float(string="Sugar B \ Colour", required=False, default=0)
+    sugar_a_colour = fields.Float(string="Sugar A \ Colour", required=False, default=0, digits=(10, 0))
+    sugar_b_colour = fields.Float(string="Sugar B \ Colour", required=False, default=0, digits=(10, 0))
     moulas_qty_ton = fields.Float(string="Moulas Qty\Ton", required=False, default=0)
     moulas_brix = fields.Float(string="Moulas Brix", required=False, default=0)
     moulas_purity = fields.Float(string="Moulas Purity", required=False, default=0)
+    sugar_moulas_rate = fields.Float(string="Sugar Moulas rate", required=False, default=0)
     lose_moulas = fields.Float(string="Moulas Lose", required=False, default=0)
     lose_bagas = fields.Float(string="Bagas Lose", required=False, default=0)
     lose_mud = fields.Float(string="Mud Lose", required=False, default=0)
     lose_total = fields.Float(string="Total Lose", required=False, readonly=1, compute="_calculate_total_lose",
                               default=0, store=True)
-    water_raw_fiber = fields.Float(string="Water Raw Fiber", required=False, default=0)
+    water_raw_fiber = fields.Float(string="Water Raw Fiber", required=False, default=0, digits=(10, 0))
     bagas_humidity = fields.Float(string="Bagas Humidity", required=False, default=0)
     brix_sherbat = fields.Float(string="Brix Sherbat", required=False, default=0)
-    juice_clear_lees = fields.Float(string="Juice Clear Lees", required=False, default=0)
+    juice_clear_lees = fields.Float(string="Juice Clear Lees", required=False, default=0, digits=(10, 0))
     steam_amount = fields.Float(string="Steam Amount", required=False, default=0)
     fuel_coal_qty = fields.Float(string="Fuel Coal Qty", required=False, default=0)
     mazout_used = fields.Float(string="Mazout Used", required=False, default=0)
     gas_used = fields.Float(string="Gas Used", required=False, default=0)
+    mazout_gas_rate = fields.Float(string="Mazout Gas rate", required=False, compute="_calculate_total_lose", default=0)
+    mazout_total = fields.Float(string="Mazout Total", compute="_calculate_total_lose", default=0)
     steam_avr = fields.Float(string="Steam Per Ton", required=False, compute="_calculate_steam_avr",
                              store=True)
 
@@ -92,9 +95,17 @@ class LabSugarAnalysis(models.Model):
                 if rec.can_crashed_ton > 0:
                     rec.steam_avr = ((rec.steam_amount or 0.0) * 1000) / (rec.can_crashed_ton or 0.0)
 
-    @api.depends('lose_moulas', 'lose_bagas', 'lose_mud')
+    @api.depends('can_sugar_rate', 'can_sweetness')
     def _calculate_total_lose(self):
-        self.lose_total = (self.lose_moulas or 0.0) + (self.lose_bagas or 0.0) + (self.lose_mud or 0.0)
+        self.lose_total = (self.can_sweetness or 0.0) - (self.can_sugar_rate or 0.0 - .02)
+
+    @api.depends('gas_used')
+    def _calculate_mazout_gas(self):
+        self.mazout_gas_rate = (self.gas_used or 0.0) / 1083
+
+    @api.depends('mazout_gas_rate', 'mazout_used')
+    def _calculate_total_lose(self):
+        self.mazout_total = (self.mazout_gas_rate or 0.0) + (self.mazout_used or 0.0)
 
     @api.depends('sugar_a_ton', 'sugar_b_ton')
     def _can_sugar_rate(self):
@@ -137,3 +148,9 @@ class LabSugarAnalysis(models.Model):
         res = super(LabSugarAnalysis, self).create(values)
         res.name = self.env['ir.sequence'].next_by_code('lab.sugar.analysis') or '/'
         return res
+
+    def unlink(self):
+        for rec in self:
+            if rec.state != 'draft':
+                raise UserError(_('You can not delete a Sugar Entry Which Is Not In Draft State.'))
+        return super(LabSugarAnalysis, self).unlink()
