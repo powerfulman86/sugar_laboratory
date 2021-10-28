@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-09 07:23+0000\n"
-"PO-Revision-Date: 2021-10-09 07:23+0000\n"
+"POT-Creation-Date: 2021-10-28 09:16+0000\n"
+"PO-Revision-Date: 2021-10-28 09:16+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -627,7 +627,6 @@ msgstr "اعطال"
 #. module: sugar_laboratory
 #: model:ir.actions.act_window,name:sugar_laboratory.action_malfunction_type_list
 #: model:ir.ui.menu,name:sugar_laboratory.menu_malfunction_type
-#: model:ir.ui.menu,name:sugar_laboratory.menu_sugar_laboratory
 msgid "Malfunction Types"
 msgstr "انواع الاعطال"
 
@@ -648,11 +647,21 @@ msgid "Manager"
 msgstr "المدير"
 
 #. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__mazout_gas_rate
+msgid "Mazout Gas rate"
+msgstr "المازوت المقابل للغاز"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__mazout_total
+msgid "Mazout Total"
+msgstr "اجمالي المازوت المستهلك (طن)"
+
+#. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__mazout_used
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__mazout_used
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__mazout_used
 msgid "Mazout Used"
-msgstr "المازوت المستهلك بالطن"
+msgstr "المازوت المستهلك (طن)"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__message_has_error
@@ -957,7 +966,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__steam_amount
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__steam_amount
 msgid "Steam Amount"
-msgstr "كمية البخاركجم/طن ق"
+msgstr "كمية البخار كجم/طن ق"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__steam_avr
@@ -1009,6 +1018,7 @@ msgstr "الرقابة والجودة"
 #. module: sugar_laboratory
 #: model:ir.actions.act_window,name:sugar_laboratory.action_sugar_analysis
 #: model:ir.ui.menu,name:sugar_laboratory.menu_analysis_branch
+#: model:ir.ui.menu,name:sugar_laboratory.menu_sugar_laboratory
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_tree
 msgid "Sugar Lab Analysis"
 msgstr "الرقابة والجوده"
@@ -1027,6 +1037,11 @@ msgstr "تقرير الرقابة والجودة التفصيلي"
 #: model:ir.ui.menu,name:sugar_laboratory.sugar_laboratory
 msgid "Sugar Laboratory"
 msgstr "الرقابة والجودة"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__sugar_moulas_rate
+msgid "Sugar Moulas rate"
+msgstr ""
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__sugar_produced_ton
@@ -1128,7 +1143,7 @@ msgstr "المستخدم"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__water_raw_fiber
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__water_raw_fiber
 msgid "Water Raw Fiber"
-msgstr "مياه الرش الياف"
+msgstr "مياه الرش % الياف"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__website_message_ids
@@ -1153,6 +1168,12 @@ msgstr ""
 #, python-format
 msgid "You can not delete a Season Estimate Which Is Not In Draft State."
 msgstr "لا يمكن حذف الارقام التقديرية للموسم بعد ان تم اعتمادها"
+
+#. module: sugar_laboratory
+#: code:addons/sugar_laboratory/models/lab_sugar_analysis.py:0
+#, python-format
+msgid "You can not delete a Sugar Entry Which Is Not In Draft State."
+msgstr ""
 
 #. module: sugar_laboratory
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_form

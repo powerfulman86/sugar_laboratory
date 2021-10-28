@@ -65,8 +65,8 @@ class LabSugarAnalysis(models.Model):
     fuel_coal_qty = fields.Float(string="Fuel Coal Qty", required=False, default=0)
     mazout_used = fields.Float(string="Mazout Used", required=False, default=0)
     gas_used = fields.Float(string="Gas Used", required=False, default=0)
-    mazout_gas_rate = fields.Float(string="Mazout Gas rate", required=False, compute="_calculate_total_lose", default=0)
-    mazout_total = fields.Float(string="Mazout Total", compute="_calculate_total_lose", default=0)
+    mazout_gas_rate = fields.Float(string="Mazout Gas rate", required=False, compute="_calculate_mazout_gas", default=0)
+    mazout_total = fields.Float(string="Mazout Total", compute="_calculate_total_mazout", default=0)
     steam_avr = fields.Float(string="Steam Per Ton", required=False, compute="_calculate_steam_avr",
                              store=True)
 
@@ -104,7 +104,7 @@ class LabSugarAnalysis(models.Model):
         self.mazout_gas_rate = (self.gas_used or 0.0) / 1083
 
     @api.depends('mazout_gas_rate', 'mazout_used')
-    def _calculate_total_lose(self):
+    def _calculate_total_mazout(self):
         self.mazout_total = (self.mazout_gas_rate or 0.0) + (self.mazout_used or 0.0)
 
     @api.depends('sugar_a_ton', 'sugar_b_ton')
