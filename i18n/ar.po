@@ -1041,7 +1041,7 @@ msgstr "الرقابة والجودة"
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__sugar_moulas_rate
 msgid "Sugar Moulas rate"
-msgstr ""
+msgstr "سكر % جم مولاس"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__sugar_produced_ton
