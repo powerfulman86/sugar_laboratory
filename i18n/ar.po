@@ -168,7 +168,7 @@ msgstr "بركس الشربات"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__can_crashed_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__can_crashed_ton
 msgid "Can Crashed / Ton"
-msgstr "القصب المعصور - طن"
+msgstr "القصب المعصور (طن)"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__can_sugar_rate
@@ -398,7 +398,7 @@ msgstr "من"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__fuel_coal_qty
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__fuel_coal_qty
 msgid "Fuel Coal Qty"
-msgstr "الوقود كجم فحم / طن ق"
+msgstr "الوقود كجم فحم / طن.ق"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__gas_used
@@ -512,7 +512,7 @@ msgstr "العصير الرئيسي % ق"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__juice_mix_purity
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__juice_mix_purity
 msgid "Juice mixed Purity"
-msgstr "نقاوة العصير خليط"
+msgstr "نقاوة العصير الخليط"
 
 #. module: sugar_laboratory
 #: model:ir.actions.act_window,name:sugar_laboratory.action_sugar_analysis_net_report
@@ -704,7 +704,7 @@ msgstr "نقاوة المولاس"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__moulas_qty_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__moulas_qty_ton
 msgid "Moulas Qty\\Ton"
-msgstr "كمية المولاس / طن"
+msgstr "كمية المولاس (طن)"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__lose_mud
@@ -966,7 +966,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__steam_amount
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__steam_amount
 msgid "Steam Amount"
-msgstr "كمية البخار كجم/طن ق"
+msgstr "كمية البخار كجم/طن.ق"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__steam_avr
@@ -1048,7 +1048,7 @@ msgstr "سكر % جم مولاس"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__sugar_produced_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__sugar_produced_ton
 msgid "Sugar Produced - Ton"
-msgstr "اجمالي السكر المنتج/طن"
+msgstr "اجمالي السكر المنتج(طن)"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__can_sweetness
@@ -1143,7 +1143,7 @@ msgstr "المستخدم"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__water_raw_fiber
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__water_raw_fiber
 msgid "Water Raw Fiber"
-msgstr "مياه الرش % الياف"
+msgstr "مياه الرش % ألياف"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__website_message_ids
