@@ -17,6 +17,8 @@ class LabSugarAnalysisReport(models.Model):
     _name = 'lab.sugar.analysis.report'
     _description = 'Lab Sugar Analysis Report'
     _auto = False
+    _rec_name = 'date'
+    _order = 'date desc'
 
     name = fields.Char('Description')
     branch_id = fields.Many2one(comodel_name="res.branch", string="Branch", )
@@ -128,16 +130,3 @@ class LabSugarAnalysisReport(models.Model):
         # self._table = sale_report
         tools.drop_view_if_exists(self.env.cr, self._table)
         self.env.cr.execute("""CREATE or REPLACE VIEW %s as (%s)""" % (self._table, self._query()))
-
-    class LabSugarAnalysisReport(models.AbstractModel):
-        _name = 'lab.sugar.analysis.report'
-        _description = 'Lab Sugar Analysis Report'
-
-        def _get_report_values(self, docids, data=None):
-            docs = self.env['sale.net'].browse(docids)
-            return {
-                'doc_ids': docs.ids,
-                'doc_model': 'lab.sugar.analysis.report',
-                'docs': docs,
-                'proforma': True
-            }
