@@ -97,7 +97,7 @@ class LabSugarAnalysis(models.Model):
 
     @api.depends('can_sugar_rate', 'can_sweetness')
     def _calculate_total_lose(self):
-        self.lose_total = (self.can_sweetness or 0.0) - (self.can_sugar_rate or 0.0 - .02)
+        self.lose_total = (self.can_sweetness or 0.0) - ((self.can_sugar_rate or 0.0) - .02)
 
     @api.depends('gas_used')
     def _calculate_mazout_gas(self):
