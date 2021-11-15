@@ -89,6 +89,7 @@ class LabSugarAnalysis(models.Model):
             self.season_estimate_daily = branch_estimate.season_estimate_daily
 
     @api.depends('steam_amount', 'can_crashed_ton')
+    @api.onchange('steam_amount', 'can_crashed_ton')
     def _calculate_steam_avr(self):
         for rec in self:
             if rec.steam_amount and rec.can_crashed_ton:
@@ -96,24 +97,29 @@ class LabSugarAnalysis(models.Model):
                     rec.steam_avr = ((rec.steam_amount or 0.0) * 1000) / (rec.can_crashed_ton or 0.0)
 
     @api.depends('can_sugar_rate', 'can_sweetness')
+    @api.onchange('can_sugar_rate', 'can_sweetness')
     def _calculate_total_lose(self):
         self.lose_total = (self.can_sweetness or 0.0) - ((self.can_sugar_rate or 0.0) - .02)
 
     @api.depends('gas_used')
+    @api.onchange('gas_used')
     def _calculate_mazout_gas(self):
         self.mazout_gas_rate = (self.gas_used or 0.0) / 1083
 
     @api.depends('mazout_gas_rate', 'mazout_used')
+    @api.onchange('mazout_gas_rate', 'mazout_used')
     def _calculate_total_mazout(self):
         self.mazout_total = (self.mazout_gas_rate or 0.0) + (self.mazout_used or 0.0)
 
     @api.depends('sugar_a_ton', 'sugar_b_ton')
+    @api.onchange('sugar_a_ton', 'sugar_b_ton')
     def _can_sugar_rate(self):
         if self.can_crashed_ton != 0:
             self.can_sugar_rate = ((((self.sugar_a_ton or 0.0) + ((self.sugar_b_ton or 0.0) * .9)) * 100) / (
                     self.can_crashed_ton or 0.0))
 
     @api.depends('sugar_a_ton', 'sugar_brown_ton', 'sugar_b_ton')
+    @api.onchange('sugar_a_ton', 'sugar_brown_ton', 'sugar_b_ton')
     def _compute_total_produced(self):
         self.sugar_produced_ton = (self.sugar_a_ton or 0.0) + (self.sugar_brown_ton or 0.0) + (self.sugar_b_ton or 0.0)
 
