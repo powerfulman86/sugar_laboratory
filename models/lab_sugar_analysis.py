@@ -48,7 +48,7 @@ class LabSugarAnalysis(models.Model):
                                   readonly=1, default=0, digits=(4, 2))
     sugar_a_colour = fields.Float(string="Sugar A \ Colour", required=False, default=0, digits=(10, 0))
     sugar_b_colour = fields.Float(string="Sugar B \ Colour", required=False, default=0, digits=(10, 0))
-    moulas_qty_ton = fields.Float(string="Moulas Qty\Ton", required=False, default=0)
+    moulas_qty_ton = fields.Float(string="Moulas Qty\Ton", required=False, default=0, digits=(10, 3))
     moulas_brix = fields.Float(string="Moulas Brix", required=False, default=0)
     moulas_purity = fields.Float(string="Moulas Purity", required=False, default=0)
     sugar_moulas_rate = fields.Float(string="Sugar Moulas rate", required=False, default=0)

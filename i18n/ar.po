@@ -355,13 +355,13 @@ msgstr "تفاصيل الارقام التقديرية"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__extract_125_fiber
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__extract_125_fiber
 msgid "Extract 12.5 Fiber"
-msgstr "استخلاص العصارات 12.5% الياف"
+msgstr "إستخلاص العصارات 12.5% ألياف"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__first_squeeze_extract
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__first_squeeze_extract
 msgid "First Squeeze Extract"
-msgstr "استخلاص العصارة الاولى % سكر"
+msgstr "إستخلاص العصارة الأولى % سكر"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__message_follower_ids
@@ -407,7 +407,7 @@ msgstr "الوقود كجم فحم / طن.ق"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__gas_used
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__gas_used
 msgid "Gas Used"
-msgstr "الغاز الطبيعي متر3"
+msgstr "الغاز الطبيعي م3"
 
 #. module: sugar_laboratory
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_search
@@ -657,7 +657,7 @@ msgstr "المازوت المقابل للغاز"
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__mazout_total
 msgid "Mazout Total"
-msgstr "اجمالي المازوت المستهلك (طن)"
+msgstr "إجمالي المازوت المستهلك (طن)"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__mazout_used
@@ -922,7 +922,7 @@ msgstr "تفاصيل تقديرات الموسم"
 #: code:addons/sugar_laboratory/models/lab_season_estimate.py:0
 #, python-format
 msgid "Season Estimate Must Be Larger Than Season Daily Estimate."
-msgstr "اجمالي التقديري للمصنع يجب ان يكون اكبر من التقدير اليومي"
+msgstr "إجمالي التقديري للمصنع يجب ان يكون اكبر من التقدير اليومي"
 
 #. module: sugar_laboratory
 #: model:ir.actions.act_window,name:sugar_laboratory.action_season_list
@@ -1011,7 +1011,7 @@ msgstr "لون سكر أ "
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__sugar_a_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__sugar_a_ton
 msgid "Sugar A \\ Ton"
-msgstr "سكر أ طن"
+msgstr "سكر أ (طن)"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__sugar_b_colour
@@ -1025,14 +1025,14 @@ msgstr " لون سكر بني"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__sugar_b_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__sugar_b_ton
 msgid "Sugar B \\ Ton"
-msgstr "سكر ب طن"
+msgstr "سكر ب (طن)"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__sugar_brown_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__sugar_brown_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__sugar_brown_ton
 msgid "Sugar Brown \\ Ton"
-msgstr "سكر بني طن"
+msgstr "سكر بني (طن)"
 
 #. module: sugar_laboratory
 #: model:ir.module.category,name:sugar_laboratory.module_category_sugar_laboratory

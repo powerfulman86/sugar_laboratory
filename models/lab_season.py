@@ -10,11 +10,28 @@ class LabSeason(models.Model):
     _rec_name = "name"
     _description = 'Lab Season'
 
-    name = fields.Char(compute='_compute_name', string="Name")
+    name = fields.Char(compute='_compute_name', string="Name", store=True)
     year_from = fields.Char('From', size=4, required=True)
     year_to = fields.Char('To', size=4, required=True)
     active = fields.Boolean('Active', default=True, tracking=True,
                             help="Set active to false to hide the Season without removing it.")
+
+    def name_get(self):
+        result = []
+        for rec in self:
+            name = ('%s' % rec.name)
+            result.append((rec.id, name))
+        return result
+
+    @api.model
+    def name_search(self, name, args=None, operator='ilike', limit=100):
+        super(LabSeason, self).name_search(name)
+        # args = args or []
+        domain = []
+        if name:
+            domain = [('name', operator, name), ]
+        recs = self.search(domain, limit=limit)
+        return recs.name_get()
 
     @api.depends('year_from', 'year_to')
     def _compute_name(self):

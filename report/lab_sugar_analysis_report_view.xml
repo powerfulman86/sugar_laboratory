@@ -6,11 +6,6 @@
             <field name="model">lab.sugar.analysis.report</field>
             <field name="arch" type="xml">
                 <search string="Lab Analysis Report Search">
-                    <filter name="season_id" string="Season"/>
-                    <filter name="branch_id" string="Branch"/>
-                    <filter name="entry_id" string="Entry"/>
-                    <filter name="entry_date" string="Transaction Date"/>
-
                     <field name="season_id"/>
                     <field name="branch_id"/>
                     <field name="entry_id"/>
