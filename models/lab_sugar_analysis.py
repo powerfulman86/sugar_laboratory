@@ -45,7 +45,7 @@ class LabSugarAnalysis(models.Model):
     sugar_produced_ton = fields.Float(string="Sugar Produced - Ton", required=False, compute="_compute_total_produced",
                                       store=True, readonly=1, default=0)
     can_sugar_rate = fields.Float(string="Can Sugar Rate", required=False, compute="_can_sugar_rate", store=True,
-                                  readonly=1, default=0)
+                                  readonly=1, default=0, digits=(4, 2))
     sugar_a_colour = fields.Float(string="Sugar A \ Colour", required=False, default=0, digits=(10, 0))
     sugar_b_colour = fields.Float(string="Sugar B \ Colour", required=False, default=0, digits=(10, 0))
     moulas_qty_ton = fields.Float(string="Moulas Qty\Ton", required=False, default=0)
@@ -99,7 +99,8 @@ class LabSugarAnalysis(models.Model):
     @api.depends('can_sugar_rate', 'can_sweetness')
     @api.onchange('can_sugar_rate', 'can_sweetness')
     def _calculate_total_lose(self):
-        self.lose_total = (self.can_sweetness or 0.0) - ((self.can_sugar_rate or 0.0) - .02)
+        var2 = (self.can_sugar_rate or 0.0) - .02
+        self.lose_total = (self.can_sweetness or 0.0) - var2
 
     @api.depends('gas_used')
     @api.onchange('gas_used')

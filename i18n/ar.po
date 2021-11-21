@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-28 09:16+0000\n"
-"PO-Revision-Date: 2021-10-28 09:16+0000\n"
+"POT-Creation-Date: 2021-11-15 09:30+0000\n"
+"PO-Revision-Date: 2021-11-15 09:30+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -123,6 +123,7 @@ msgstr "يجب تسجيل الرقم التقديري للموسم والرقم 
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__branch_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__branch_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__branch_id
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_search
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_net_search
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_search
 msgid "Branch"
@@ -323,6 +324,7 @@ msgid "End Date"
 msgstr "تاريخ النهايه"
 
 #. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_search
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_search
 msgid "Entry"
 msgstr "اليومية"
@@ -408,6 +410,7 @@ msgid "Gas Used"
 msgstr "الغاز الطبيعي متر3"
 
 #. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_search
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_net_search
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_search
 msgid "Group By"
@@ -813,6 +816,16 @@ msgid "Number of unread messages"
 msgstr ""
 
 #. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_search
+msgid "Order"
+msgstr "اليوميه"
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_search
+msgid "Order Date"
+msgstr "تاريخ اليوميه"
+
+#. module: sugar_laboratory
 #: code:addons/sugar_laboratory/models/lab_season.py:0
 #, python-format
 msgid "Please Enter Correct Year Format"
@@ -861,12 +874,18 @@ msgid "SMS Delivery error"
 msgstr ""
 
 #. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_search
+msgid "Search Sugar Laboratory"
+msgstr ""
+
+#. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season_estimate__season_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season_estimate_line__season_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__season_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__season_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__season_id
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_season_view_tree
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_search
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_net_search
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_search
 msgid "Season"
@@ -942,6 +961,11 @@ msgstr "تحويل السجل الى غير فعال بدون حذفه"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__date_start
 msgid "Start Date"
 msgstr "تاريخ البدايه"
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_search
+msgid "State"
+msgstr "الحاله"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__state
