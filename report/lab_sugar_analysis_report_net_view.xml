@@ -12,9 +12,13 @@
                     <field name="season_id"/>
                     <field name="branch_id"/>
                     <field name="entry_date"/>
+                    <field name="entry_month"/>
+                    <field name="entry_day"/>
                     <group expand="1" string="Group By">
                         <filter string="Season" name="Season" context="{'group_by':'season_id'}"/>
                         <filter string="Branch" name="branch" context="{'group_by':'branch_id'}"/>
+                        <filter string="Entry Month" name="entry_month" context="{'group_by':'entry_month'}"/>
+                        <filter string="Entry Day" name="entry_day" context="{'group_by':'entry_day'}"/>
                         <filter string="Transaction Date" name="entry_date" context="{'group_by':'entry_date'}"/>
                     </group>
                 </search>

@@ -12,7 +12,9 @@ class LabSugarAnalysisNetReport(models.Model):
 
     name = fields.Char('Description')
     branch_id = fields.Many2one(comodel_name="res.branch", string="Branch",)
-    entry_date = fields.Date(string="Transaction Date", required=True, default=fields.Date.context_today, copy=False)
+    entry_date = fields.Date(string="Transaction Date",)
+    entry_month = fields.Integer(string="Month")
+    entry_day = fields.Integer(string="Day")
     season_id = fields.Many2one(comodel_name="lab.season", string="Season", index=True, help='This is branch to set')
     season_estimate_daily = fields.Float(string="Season Daily Estimate", )
     can_crashed_ton = fields.Float(string="Can Crashed / Ton", required=True, )
@@ -39,6 +41,8 @@ class LabSugarAnalysisNetReport(models.Model):
                     l.name as name,
                     l.branch_id as branch_id,
                     l.entry_date as entry_date,
+                    l.entry_month as entry_month,
+                    l.entry_day as entry_day,
                     l.season_id as season_id,
                     l.season_estimate_daily as season_estimate_daily,
                     sum(l.can_crashed_ton) as  can_crashed_ton,
@@ -72,6 +76,8 @@ class LabSugarAnalysisNetReport(models.Model):
                     l.name,
                     l.branch_id,
                     l.entry_date,
+                    l.entry_month,
+                    l.entry_day,
                     l.season_id,
                     l.season_estimate_daily %s
                 """ % groupby

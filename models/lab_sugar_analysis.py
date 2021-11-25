@@ -8,7 +8,6 @@ AVAILABLE_STATUS = [
     ('branchApproved', 'Branch Approved'),
     ('deptApproved', 'Dept. Approved'),
     ('approved', 'Approved'),
-    ('cancel', 'Cancel'),
 ]
 
 
@@ -23,6 +22,9 @@ class LabSugarAnalysis(models.Model):
     entry_id = fields.Integer(string="Entry Number", required=True, tracking=True)
     entry_date = fields.Date(string="Transaction Date", required=True, default=fields.Date.context_today, copy=False,
                              tracking=True)
+    entry_month = fields.Integer(string="Month", required=False, compute="_set_month_day", store=True, )
+    entry_day = fields.Integer(string="Day", required=False, compute="_set_month_day", store=True, )
+
     state = fields.Selection(AVAILABLE_STATUS, string='state', tracking=True, default=AVAILABLE_STATUS[0][0],
                              required=True)
     season_id = fields.Many2one(comodel_name="lab.season", string="Season", required=True,
@@ -70,6 +72,13 @@ class LabSugarAnalysis(models.Model):
     steam_avr = fields.Float(string="Steam Per Ton", required=False, compute="_calculate_steam_avr",
                              store=True)
 
+    @api.onchange('entry_date')
+    def _set_month_day(self):
+        for rec in self:
+            if rec.entry_date:
+                rec.entry_month = rec.entry_date.month
+                rec.entry_day = rec.entry_date.day
+
     @api.onchange('season_id', 'branch_id')
     def get_season_estimate(self):
         # if self.season_id:
@@ -112,8 +121,8 @@ class LabSugarAnalysis(models.Model):
     def _calculate_total_mazout(self):
         self.mazout_total = (self.mazout_gas_rate or 0.0) + (self.mazout_used or 0.0)
 
-    @api.depends('sugar_a_ton', 'sugar_b_ton')
-    @api.onchange('sugar_a_ton', 'sugar_b_ton')
+    @api.depends('sugar_a_ton', 'sugar_b_ton', 'can_crashed_ton')
+    @api.onchange('sugar_a_ton', 'sugar_b_ton', 'can_crashed_ton')
     def _can_sugar_rate(self):
         if self.can_crashed_ton != 0:
             self.can_sugar_rate = ((((self.sugar_a_ton or 0.0) + ((self.sugar_b_ton or 0.0) * .9)) * 100) / (
@@ -132,9 +141,6 @@ class LabSugarAnalysis(models.Model):
 
     def action_approved(self):
         self.state = 'approved'
-
-    def action_cancel(self):
-        self.state = 'cancel'
 
     @api.model
     def create(self, values):

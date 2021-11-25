@@ -11,7 +11,7 @@
                     <field name="branch_id"/>
                     <field name="entry_id"/>
                     <field name="entry_date"/>
-                    <field name="state" />
+                    <field name="state"/>
                     <filter name="entry_date" string="Order Date" date="entry_date"/>
                     <group expand="0" string="Group By">
                         <filter string="Season" name="season" domain="[]" context="{'group_by':'season_id'}"/>
@@ -35,8 +35,6 @@
                                 string="Dept. Approve"/>
                         <button class="oe_highlight" name="action_approved" states="deptApproved" type="object"
                                 string="Approve"/>
-                        <button class="oe_highlight" name="action_cancel" states="draft,branchApproved,deptApproved"
-                                type="object" string="Cancel"/>
                         <field name="state" widget="statusbar"/>
                     </header>
                     <sheet>
@@ -56,6 +54,8 @@
                             <group>
                                 <field name="entry_id" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                                 <field name="entry_date" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="entry_month" invisible="1"/>
+                                <field name="entry_day" invisible="1"/>
                             </group>
                         </group>
                         <notebook>
