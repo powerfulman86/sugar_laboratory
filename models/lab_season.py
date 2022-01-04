@@ -13,6 +13,7 @@ class LabSeason(models.Model):
     name = fields.Char(compute='_compute_name', string="Name", store=True)
     year_from = fields.Char('From', size=4, required=True)
     year_to = fields.Char('To', size=4, required=True)
+    current_season = fields.Boolean("Current Season")
     active = fields.Boolean('Active', default=True, tracking=True,
                             help="Set active to false to hide the Season without removing it.")
 
@@ -60,3 +61,12 @@ class LabSeason(models.Model):
                 if int(rec.year_to) - int(rec.year_from) != 1:
                     raise ValidationError(
                         _("لابد أن تكون السنة فى الحقل <إلى> أكبر من السنة فى الحقل <من> بمقدار سنة واحدة فقط"))
+
+    @api.constrains('current_season')
+    def constrains_now(self):
+        for rec in self:
+            season_ids = self.env['lab.season'].search([('current_season', '=', True)], order=' id ASC')
+            if len(season_ids.ids) > 1:
+                for l in season_ids:
+                    if l != rec:
+                        raise ValidationError(_("Current Season  [ %s ] " % l.name))

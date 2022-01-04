@@ -16,18 +16,26 @@ class LabSugarAnalysis(models.Model):
     _description = 'Lab Sugar Analysis'
     _inherit = ['mail.thread', 'mail.activity.mixin', 'portal.mixin']
 
+    @api.model
+    def get_seasons(self):
+        return self.env['lab.season'].search([('current_season', '=', True)]).id
+
+    @api.model
+    def get_branch(self):
+        if self.env.user.branch_id:
+            return self.env.user.branch_id.id
+        else:
+            return ''
+
     name = fields.Char('Description')
-    branch_id = fields.Many2one(comodel_name="res.branch", string="Branch", required=True,
+    branch_id = fields.Many2one(comodel_name="res.branch", string="Branch", required=True, default=get_branch,
                                 index=True, help='This is branch to set')
     entry_id = fields.Integer(string="Entry Number", required=True, tracking=True)
     entry_date = fields.Date(string="Transaction Date", required=True, default=fields.Date.context_today, copy=False,
                              tracking=True)
-    entry_month = fields.Integer(string="Month", required=False, compute="_set_month_day", store=True, )
-    entry_day = fields.Integer(string="Day", required=False, compute="_set_month_day", store=True, )
-
     state = fields.Selection(AVAILABLE_STATUS, string='state', tracking=True, default=AVAILABLE_STATUS[0][0],
                              required=True)
-    season_id = fields.Many2one(comodel_name="lab.season", string="Season", required=True,
+    season_id = fields.Many2one(comodel_name="lab.season", string="Season", default=get_seasons, required=True,
                                 index=True, help='This is branch to set')
     season_estimate_daily = fields.Float(string="Season Daily Estimate", required=False, )
 
@@ -71,6 +79,9 @@ class LabSugarAnalysis(models.Model):
     mazout_total = fields.Float(string="Mazout Total", compute="_calculate_total_mazout", default=0)
     steam_avr = fields.Float(string="Steam Per Ton", required=False, compute="_calculate_steam_avr",
                              store=True)
+
+    entry_month = fields.Integer(string="Month", required=False, compute="_set_month_day", store=True, )
+    entry_day = fields.Integer(string="Day", required=False, compute="_set_month_day", store=True, )
 
     @api.onchange('entry_date')
     def _set_month_day(self):

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--Sugar Lines-->
+        <record id="view_sugar_line_form" model="ir.ui.view">
+            <field name="name">res.branch.sugar.line.form</field>
+            <field name="model">res.branch.sugar.line</field>
+            <field name="arch" type="xml">
+                <form string="Branch Sugar Lines">
+                    <sheet>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                                attrs="{'invisible': [('active', '=', True)]}"/>
+                        <group row="2">
+                            <group>
+                                <field name="active" invisible="1"/>
+                                <field name="name"/>
+                                <field name="branch_id"/>
+                            </group>
+                            <field name="notes" placeholder="Notes ..."/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_sugar_line_tree" model="ir.ui.view">
+            <field name="name">res.branch.sugar.line.tree</field>
+            <field name="model">res.branch.sugar.line</field>
+            <field name="arch" type="xml">
+                <tree string="Branch Sugar Lines">
+                    <field name="name"/>
+                    <field name="branch_id"/>
+                    <field name="notes"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_view_sugar_line" model="ir.actions.act_window">
+            <field name="name">Branch Sugar Lines</field>
+            <field name="res_model">res.branch.sugar.line</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Branch Sugar Line
+                </p>
+
+            </field>
+        </record>
+
+        <menuitem id="menu_sugar_line"
+                  name="Branch Sugar Lines"
+                  parent="menu_configuration"
+                  action="action_view_sugar_line"/>
+        <!--Sugar Pools-->
+
+        <record id="view_sugar_pool_form" model="ir.ui.view">
+            <field name="name">res.branch.sugar.pool.form</field>
+            <field name="model">res.branch.sugar.pool</field>
+            <field name="arch" type="xml">
+                <form string="Branch Sugar Pools">
+                    <sheet>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger"
+                                attrs="{'invisible': [('active', '=', True)]}"/>
+                        <group row="2">
+                            <group>
+                                <field name="active" invisible="1"/>
+                                <field name="name"/>
+                                <field name="branch_id"/>
+                            </group>
+                            <field name="notes" placeholder="Notes ..."/>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_sugar_pool_tree" model="ir.ui.view">
+            <field name="name">res.branch.sugar.pool.tree</field>
+            <field name="model">res.branch.sugar.pool</field>
+            <field name="arch" type="xml">
+                <tree string="Branch Sugar Pools">
+                    <field name="name"/>
+                    <field name="branch_id"/>
+                    <field name="notes"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_view_sugar_pool" model="ir.actions.act_window">
+            <field name="name">Branch Sugar Pools</field>
+            <field name="res_model">res.branch.sugar.pool</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Branch Sugar Pools
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_sugar_pool"
+                  name="Branch Sugar Pools"
+                  parent="menu_configuration"
+                  action="action_view_sugar_pool"/>
+        <!--Sugar analysis-->
+        <record id="view_sugar_analysis_type_tree" model="ir.ui.view">
+            <field name="name">sugar.analysis.type.tree</field>
+            <field name="model">sugar.analysis.type</field>
+            <field name="arch" type="xml">
+                <tree string="Sugar Analysis Type" editable="bottom">
+                    <field name="name"/>
+                    <field name="notes"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_view_sugar_analysis" model="ir.actions.act_window">
+            <field name="name">Sugar Analysis</field>
+            <field name="res_model">sugar.analysis.type</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Branch Sugar Pools
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_sugar_analysis"
+                  name="Sugar analysis"
+                  parent="menu_configuration"
+                  action="action_view_sugar_analysis"
+                  sequence="3"/>
+    </data>
+</odoo>

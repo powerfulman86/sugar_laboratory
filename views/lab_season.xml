@@ -14,6 +14,7 @@
                             <group>
                                 <field name="year_from" size="4"/>
                                 <field name="year_to" size="4"/>
+                                <field name="current_season" size="4"/>
                             </group>
                         </group>
                     </sheet>
@@ -34,6 +35,7 @@
                     <field name="name"/>
                     <field name="year_from"/>
                     <field name="year_to"/>
+                    <field name="current_season"/>
                     <field name="active"/>
                 </tree>
             </field>

@@ -18,6 +18,7 @@
         'report/lab_sugar_analysis_report_view.xml',
         'report/lab_sugar_analysis_report_net_view.xml',
         'views/lab_menu_views.xml',
+        'views/lab_sugar_views.xml',
     ],
     'images': ['static/description/icon.png'],
     'license': 'AGPL-3',

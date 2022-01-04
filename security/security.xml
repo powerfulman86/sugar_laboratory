@@ -12,16 +12,29 @@
             <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
         </record>
 
+        <record id="sugar_lab_supervisor" model="res.groups">
+            <field name="name">Supervisor</field>
+            <field name="category_id" ref="module_category_sugar_laboratory"/>
+            <field name="implied_ids" eval="[(4, ref('sugar_lab_user'))]"/>
+        </record>
+
         <record id="sugar_lab_branch_manager" model="res.groups">
             <field name="name">Branch Manager</field>
             <field name="category_id" ref="module_category_sugar_laboratory"/>
-            <field name="implied_ids" eval="[(4, ref('sugar_lab_user'))]"/>
+            <field name="implied_ids" eval="[(4, ref('sugar_lab_supervisor'))]"/>
         </record>
 
         <record id="sugar_lab_manager" model="res.groups">
             <field name="name">Manager</field>
             <field name="category_id" ref="module_category_sugar_laboratory"/>
             <field name="implied_ids" eval="[(4, ref('sugar_lab_branch_manager'))]"/>
+        </record>
+
+        <record id="sugar_lab_branch_manager_rule" model="ir.rule">
+            <field name="name">Branch Manager</field>
+            <field name="model_id" ref="multi_branch.model_res_branch"/>
+            <field name="groups" eval="[(4, ref('sugar_lab_branch_manager'))]"/>
+            <field name="domain_force">[('id', '=', user.branch_id.id)]</field>
         </record>
     </data>
 </odoo>
