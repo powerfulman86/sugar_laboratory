@@ -29,12 +29,14 @@
             <field name="arch" type="xml">
                 <form string="lab_sugar_analysis_view_form">
                     <header>
+                        <button class="oe_highlight" name="action_set_draft" states="approved" type="object"
+                                string="Set Draft" groups="sugar_laboratory.sugar_lab_admin"/>
                         <button class="oe_highlight" name="action_branch_approved" states="draft" type="object"
-                                string="Branch Approve"/>
+                                string="Branch Approve" groups="sugar_laboratory.sugar_lab_supervisor"/>
                         <button class="oe_highlight" name="action_dept_approved" states="branchApproved" type="object"
-                                string="Dept. Approve"/>
+                                string="Dept. Approve" groups="sugar_laboratory.sugar_lab_branch_manager"/>
                         <button class="oe_highlight" name="action_approved" states="deptApproved" type="object"
-                                string="Approve"/>
+                                string="Approve" groups="sugar_laboratory.sugar_lab_manager"/>
                         <field name="state" widget="statusbar"/>
                     </header>
                     <sheet>

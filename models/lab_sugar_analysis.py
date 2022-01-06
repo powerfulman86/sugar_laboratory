@@ -153,6 +153,9 @@ class LabSugarAnalysis(models.Model):
     def action_approved(self):
         self.state = 'approved'
 
+    def action_set_draft(self):
+        self.state = 'draft'
+
     @api.model
     def create(self, values):
         entry_no = values['entry_id']
