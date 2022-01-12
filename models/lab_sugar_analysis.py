@@ -38,7 +38,9 @@ class LabSugarAnalysis(models.Model):
     season_id = fields.Many2one(comodel_name="lab.season", string="Season", default=get_seasons, required=True,
                                 index=True, help='This is branch to set')
     season_estimate_daily = fields.Float(string="Season Daily Estimate", required=False, )
-
+    malfunction_line = fields.One2many(comodel_name="lab.malfunctions.branch", inverse_name="analysis_id",
+                                       string="Malfunction Line", required=False, )
+    down_time = fields.Integer(string="Down Time", required=False, )
     entry_notes = fields.Html('Notes', help='Notes', tracking=True)
 
     can_crashed_ton = fields.Float(string="Can Crashed / Ton", required=True, default=0)
@@ -181,3 +183,54 @@ class LabSugarAnalysis(models.Model):
             if rec.state != 'draft':
                 raise UserError(_('You can not delete a Sugar Entry Which Is Not In Draft State.'))
         return super(LabSugarAnalysis, self).unlink()
+
+    @api.onchange('malfunction_line')
+    def _set_line_branches(self):
+        for line in self.malfunction_line:
+            if not line.branch_id:
+                line.branch_id = self.branch_id
+
+
+class LabMalfunctions(models.Model):
+    _name = 'lab.malfunctions'
+    _description = 'Laboratory Malfunctions'
+    _inherit = ['mail.thread', 'mail.activity.mixin', 'portal.mixin']
+
+    name = fields.Char('Description')
+    internal_reference = fields.Integer(string="Internal Reference", required=False, )
+    notes = fields.Text('Notes')
+    active = fields.Boolean('Active', default=True, tracking=True,
+                            help="Set active to false to hide the Malfunction without removing it.")
+    child_ids = fields.One2many(comodel_name="lab.malfunctions.branch", string="Child Ids",
+                                inverse_name="malfunction_id")
+
+
+class LabMalfunctionsBranch(models.Model):
+    _name = 'lab.malfunctions.branch'
+    _description = 'Lab Branch Malfunctions'
+    _inherit = ['mail.thread', 'mail.activity.mixin', 'portal.mixin']
+
+    name = fields.Char()
+    sequence = fields.Integer(string='Sequence', default=10)
+    analysis_id = fields.Many2one(comodel_name="lab.sugar.analysis", string="Malfunction Analysis",
+                                  required=True, )
+    branch_id = fields.Many2one(comodel_name="res.branch", related='analysis_id.branch_id', string="Branch",
+                                index=True, tracking=1, help='This is branch to set malfunction for')
+
+    line_id = fields.Many2one(comodel_name="res.branch.sugar.line", string="Sugar Line", required=True, )
+    malfunction_id = fields.Many2one(comodel_name="lab.malfunctions", string="Malfunction", required=True, )
+
+    date_start = fields.Datetime(string="Start Date", required=True, default=fields.Date.context_today, copy=False)
+    date_end = fields.Datetime(string="End Date", required=True, default=fields.Date.context_today, copy=False)
+    down_time = fields.Integer(string="Down Time", required=False, )
+    notes = fields.Text('Notes')
+
+    @api.constrains('date_start', 'date_end')
+    def _date_validation(self):
+        for rec in self:
+            down_time = int((rec.date_end - rec.date_start).total_seconds() / 60.0)
+            if down_time and down_time <= 0:
+                raise ValidationError(_("Malfunction End Date Must Be Greater than start date !"))
+
+            rec.down_time = down_time
+            rec.analysis_id.down_time = (rec.analysis_id.down_time or 0.0) +  down_time

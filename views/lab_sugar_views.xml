@@ -58,8 +58,8 @@
                   name="Branch Sugar Lines"
                   parent="menu_configuration"
                   action="action_view_sugar_line"/>
-        <!--Sugar Pools-->
 
+        <!--Sugar Pools-->
         <record id="view_sugar_pool_form" model="ir.ui.view">
             <field name="name">res.branch.sugar.pool.form</field>
             <field name="model">res.branch.sugar.pool</field>
@@ -115,6 +115,7 @@
                   name="Branch Sugar Pools"
                   parent="menu_configuration"
                   action="action_view_sugar_pool"/>
+
         <!--Sugar analysis-->
         <record id="view_sugar_analysis_type_tree" model="ir.ui.view">
             <field name="name">sugar.analysis.type.tree</field>

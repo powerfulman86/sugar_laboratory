@@ -23,43 +23,44 @@ class LabSugarAnalysisReport(models.Model):
     name = fields.Char('Description')
     branch_id = fields.Many2one(comodel_name="res.branch", string="Branch", )
     entry_id = fields.Integer(string="Entry Number")
-    entry_date = fields.Date(string="Transaction Date",)
+    entry_date = fields.Date(string="Transaction Date", )
     entry_month = fields.Integer(string="Month")
     entry_day = fields.Integer(string="Day")
     state = fields.Selection(AVAILABLE_STATUS, string='state')
     season_id = fields.Many2one(comodel_name="lab.season", string="Season")
     season_estimate_daily = fields.Float(string="Season Daily Estimate", )
-    can_crashed_ton = fields.Float(string="Can Crashed / Ton", required=True, )
-    can_sweetness = fields.Float(string="Sweetness", required=False, )
-    juice_mix_purity = fields.Float(string="Juice mixed Purity", required=False, )
-    juice_main_val = fields.Float(string="Juice Main Val", required=False, )
-    juice_lab_val = fields.Float(string="Juice Lab Val", required=False, )
-    first_squeeze_extract = fields.Float(string="First Squeeze Extract", required=False, )
-    berx_juice_mix = fields.Float(string="Berx Juice Mix", required=False, )
-    extract_125_fiber = fields.Float(string="Extract 12.5 Fiber", required=False, )
-    sugar_a_ton = fields.Float(string="Sugar A \ Ton", required=False, )
-    sugar_brown_ton = fields.Float(string="Sugar Brown \ Ton", required=False, )
-    sugar_b_ton = fields.Float(string="Sugar B \ Ton", required=False, )
+    can_crashed_ton = fields.Float(string="Can Crashed / Ton", )
+    can_sweetness = fields.Float(string="Sweetness", )
+    juice_mix_purity = fields.Float(string="Juice mixed Purity", )
+    juice_main_val = fields.Float(string="Juice Main Val", )
+    juice_lab_val = fields.Float(string="Juice Lab Val", )
+    first_squeeze_extract = fields.Float(string="First Squeeze Extract", )
+    berx_juice_mix = fields.Float(string="Berx Juice Mix", )
+    extract_125_fiber = fields.Float(string="Extract 12.5 Fiber", )
+    sugar_a_ton = fields.Float(string="Sugar A \ Ton", )
+    sugar_brown_ton = fields.Float(string="Sugar Brown \ Ton", )
+    sugar_b_ton = fields.Float(string="Sugar B \ Ton", )
     sugar_produced_ton = fields.Float(string="Sugar Produced - Ton", )
     can_sugar_rate = fields.Float(string="Can Sugar Rate", )
-    sugar_a_colour = fields.Float(string="Sugar A \ Colour", required=False, )
-    sugar_b_colour = fields.Float(string="Sugar B \ Colour", required=False, )
-    moulas_qty_ton = fields.Float(string="Moulas Qty\Ton", required=False, )
-    moulas_brix = fields.Float(string="Moulas Brix", required=False, )
-    moulas_purity = fields.Float(string="Moulas Purity", required=False, )
-    lose_moulas = fields.Float(string="Moulas Lose", required=False, )
-    lose_bagas = fields.Float(string="Bagas Lose", required=False, )
-    lose_mud = fields.Float(string="Mud Lose", required=False, )
-    lose_total = fields.Float(string="Total Lose", required=False, )
-    water_raw_fiber = fields.Float(string="Water Raw Fiber", required=False, )
-    bagas_humidity = fields.Float(string="Bagas Humidity", required=False, )
-    brix_sherbat = fields.Float(string="Brix Sherbat", required=False, )
-    juice_clear_lees = fields.Float(string="Juice Clear Lees", required=False, )
-    steam_amount = fields.Float(string="Steam Amount", required=False, )
-    fuel_coal_qty = fields.Float(string="Fuel Coal Qty", required=False, )
-    mazout_used = fields.Float(string="Mazout Used", required=False, )
-    gas_used = fields.Float(string="Gas Used", required=False, )
+    sugar_a_colour = fields.Float(string="Sugar A \ Colour", )
+    sugar_b_colour = fields.Float(string="Sugar B \ Colour", )
+    moulas_qty_ton = fields.Float(string="Moulas Qty\Ton", )
+    moulas_brix = fields.Float(string="Moulas Brix", )
+    moulas_purity = fields.Float(string="Moulas Purity", )
+    lose_moulas = fields.Float(string="Moulas Lose", )
+    lose_bagas = fields.Float(string="Bagas Lose", )
+    lose_mud = fields.Float(string="Mud Lose", )
+    lose_total = fields.Float(string="Total Lose", )
+    water_raw_fiber = fields.Float(string="Water Raw Fiber", )
+    bagas_humidity = fields.Float(string="Bagas Humidity", )
+    brix_sherbat = fields.Float(string="Brix Sherbat", )
+    juice_clear_lees = fields.Float(string="Juice Clear Lees", )
+    steam_amount = fields.Float(string="Steam Amount", )
+    fuel_coal_qty = fields.Float(string="Fuel Coal Qty", )
+    mazout_used = fields.Float(string="Mazout Used", )
+    gas_used = fields.Float(string="Gas Used", )
     steam_avr = fields.Float(string="Steam Per Ton")
+    down_time = fields.Integer(string="Down Time", )
 
     def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
         with_ = ("WITH %s" % with_clause) if with_clause else ""
@@ -75,6 +76,7 @@ class LabSugarAnalysisReport(models.Model):
                     l.state as state,
                     l.season_id as season_id,
                     l.season_estimate_daily as season_estimate_daily,
+                    l.down_time as down_time,
                     sum(l.can_crashed_ton) as  can_crashed_ton,
                     sum(l.can_sweetness) as can_sweetness,
                     sum(l.juice_mix_purity) as juice_mix_purity,
@@ -127,7 +129,8 @@ class LabSugarAnalysisReport(models.Model):
                     l.entry_day,
                     l.state,
                     l.season_id,
-                     l.season_estimate_daily %s
+                    l.season_estimate_daily,
+                    l.down_time %s
                 """ % groupby
 
         return '%s (SELECT %s FROM %s WHERE l.id IS NOT NULL GROUP BY %s)' % (with_, select_, from_, groupby_)

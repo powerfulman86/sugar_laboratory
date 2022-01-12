@@ -1,6 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <!--malfunction-->
+        <record id="view_malfunctions_list" model="ir.ui.view">
+            <field name="name">lab.malfunctions.list</field>
+            <field name="model">lab.malfunctions</field>
+            <field name="arch" type="xml">
+                <tree string="Malfunctions Types" editable="bottom">
+                    <field name="name"/>
+                    <field name="notes"/>
+                    <field name="active"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_malfunction_type_list" model="ir.actions.act_window">
+            <field name="name">Malfunction Types</field>
+            <field name="res_model">lab.malfunctions</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Malfunction Type
+                </p>
+                <p>
+                    Malfunction Types allow you to Create New Branch Malfunctions.
+                </p>
+            </field>
+        </record>
+
+        <!--Season-->
         <record id="season_view_form" model="ir.ui.view">
             <field name="name">lab_season_view_form</field>
             <field name="model">lab.season</field>
@@ -46,6 +75,78 @@
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">lab.season</field>
             <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--Season Estimate-->
+        <record id="season_estimate_view_form" model="ir.ui.view">
+            <field name="name">lab_season_estimate_view_form</field>
+            <field name="model">lab.season.estimate</field>
+            <field name="arch" type="xml">
+                <form string="Season Estimate">
+                    <header>
+                        <button class="oe_highlight" name="action_approved" states="draft" type="object"
+                                string="Approve"/>
+                        <button class="oe_highlight" name="action_cancel" states="draft" type="object" string="Cancel"/>
+                        <button class="oe_highlight" name="action_close" states="approved" type="object" string="Close"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <h3>
+                                <field name="name" readonly="1"/>
+                            </h3>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="season_id"/>
+                                <field name="notes"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Details">
+                                <field name="estimate_lines" widget="section_and_note_one2many" mode="tree"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}">
+                                    <tree string="Estimate Lines" editable="bottom" create="false">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="branch_id" readonly="1"/>
+                                        <field name="season_estimate_daily" widget="monetary" sum="season_estimate_daily"/>
+                                        <field name="season_estimate" widget="monetary" sum="season_estimate"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="season_estimate_view_tree" model="ir.ui.view">
+            <field name="name">lab_season_estimate_view_tree</field>
+            <field name="model">lab.season.estimate</field>
+            <field name="arch" type="xml">
+                <tree string="Season Estimate" decoration-muted="state=='cancel'" decoration-info="state == 'draft'">
+                    <field name="name"/>
+                    <field name="season_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_season_estimate_list" model="ir.actions.act_window">
+            <field name="name">Season Estimate</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">lab.season.estimate</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new Season Estimate
+                </p>
+            </field>
         </record>
     </data>
 </odoo>

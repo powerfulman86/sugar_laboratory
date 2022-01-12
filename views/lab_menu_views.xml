@@ -19,10 +19,8 @@
         <menuitem id="menu_season_estimate" name="Seasons Estimate" parent="menu_configuration"
                   action="action_season_estimate_list" sequence="2"/>
 
-        <menuitem id="menu_malfunction_branch" name="Branch Malfunction" parent="menu_Transaction"
-                  action="action_malfunction_branch" sequence="1"/>
         <menuitem id="menu_analysis_branch" name="Sugar Lab Analysis" parent="menu_Transaction"
-                  action="action_sugar_analysis" sequence="2"/>
+                  action="action_sugar_analysis" sequence="1"/>
 
         <menuitem id="menu_sugar_analysis_report" name="Sugar Lab Analysis Report" parent="menu_reporting"
                   action="action_sugar_analysis_report" sequence="2"/>

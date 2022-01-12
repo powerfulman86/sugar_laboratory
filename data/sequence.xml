@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="lab_malfunction" model="ir.sequence">
-            <field name="name">lab.malfunctions.branch</field>
-            <field name="code">lab.malfunctions.branch</field>
-            <field name="prefix">MF/</field>
-            <field name="padding">5</field>
-        </record>
-
         <record id="lab_sugar_analysis" model="ir.sequence">
             <field name="name">lab.sugar.analysis.seq</field>
             <field name="code">lab.sugar.analysis</field>
