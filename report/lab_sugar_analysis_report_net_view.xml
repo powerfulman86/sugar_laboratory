@@ -42,8 +42,13 @@
             <field name="model">lab.sugar.analysis.net.report</field>
             <field name="arch" type="xml">
                 <graph string="Lab Analysis Net Report" type="line">
-                    <field name="entry_date" type="row" interval="day"/>
+                    <field name="branch_id" type="row"/>
+                    <field name="season_id" type="row"/>
                     <field name="can_crashed_ton" type="measure"/>
+                    <field name="sugar_produced_ton" type="measure"/>
+                    <field name="fuel_coal_qty" type="measure"/>
+                    <field name="mazout_used" type="measure"/>
+                    <field name="moulas_qty_ton" type="measure"/>
                 </graph>
             </field>
         </record>

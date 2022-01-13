@@ -119,7 +119,7 @@
                                         <field name="date_start"/>
                                         <field name="date_end"/>
                                         <field name="branch_id" invisible="1"/>
-                                        <field name="down_time"/>
+                                        <field name="down_time" readonly="1"/>
                                         <field name="notes"/>
                                     </tree>
                                 </field>
