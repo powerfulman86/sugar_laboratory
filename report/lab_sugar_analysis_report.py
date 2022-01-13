@@ -22,7 +22,7 @@ class LabSugarAnalysisReport(models.Model):
 
     name = fields.Char('Description')
     branch_id = fields.Many2one(comodel_name="res.branch", string="Branch", )
-    entry_id = fields.Integer(string="Entry Number")
+    entry_id = fields.Integer(string="Entry Number",)
     entry_date = fields.Date(string="Transaction Date", )
     entry_month = fields.Integer(string="Month")
     entry_day = fields.Integer(string="Day")

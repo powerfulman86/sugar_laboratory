@@ -86,6 +86,7 @@ class LabSugarAnalysis(models.Model):
     entry_day = fields.Integer(string="Day", required=False, compute="_set_month_day", store=True, )
 
     @api.onchange('entry_date')
+    @api.depends('entry_date')
     def _set_month_day(self):
         for rec in self:
             if rec.entry_date:
