@@ -109,6 +109,9 @@
                                     <tree string="Estimate Lines" editable="bottom" create="false">
                                         <field name="sequence" widget="handle"/>
                                         <field name="branch_id" readonly="1"/>
+                                        <field name="season_days" sum="season_days"/>
+                                        <field name="sugar_produced_ton" sum="sugar_produced_ton"/>
+                                        <field name="moulas_qty_ton" sum="moulas_qty_ton"/>
                                         <field name="season_estimate_daily" widget="monetary" sum="season_estimate_daily"/>
                                         <field name="season_estimate" widget="monetary" sum="season_estimate"/>
                                     </tree>

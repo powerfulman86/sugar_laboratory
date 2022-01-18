@@ -159,5 +159,8 @@ class LabSeasonEstimateLine(models.Model):
     season_id = fields.Many2one(comodel_name="lab.season", related="estimate_id.season_id", string="Season",
                                 required=True, index=True)
     branch_id = fields.Many2one("res.branch", string="Branch", required=True, index=True, )
-    season_estimate = fields.Float(string="Season Estimate", required=False, )
-    season_estimate_daily = fields.Float(string="Season Daily Estimate", required=False, )
+    season_days = fields.Integer(string="Season Days", required=True, )
+    sugar_produced_ton = fields.Float(string="Sugar Produced - Ton", required=True, store=True, default=0)
+    moulas_qty_ton = fields.Float(string="Moulas Qty\Ton", required=False, default=0, digits=(10, 3))
+    season_estimate_daily = fields.Float(string="Season Daily Estimate", required=True, )
+    season_estimate = fields.Float(string="Season Estimate", required=True, )
