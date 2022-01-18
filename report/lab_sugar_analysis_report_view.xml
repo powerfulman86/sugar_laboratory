@@ -47,7 +47,7 @@
             <field name="model">lab.sugar.analysis.report</field>
             <field name="arch" type="xml">
                 <graph string="Lab Analysis Report" type="line">
-                    <field name="entry_date" type="row" interval="day"/>
+                    <field name="branch_id" type="row"/>
                     <field name="can_crashed_ton" type="measure"/>
                 </graph>
             </field>

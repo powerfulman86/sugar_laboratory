@@ -33,6 +33,7 @@
                     <field name="season_id" type="row"/>
                     <field name="branch_id" type="row"/>
                     <field name="can_crashed_ton" type="measure"/>
+                    <field name="sugar_produced_ton" type="measure"/>
                 </pivot>
             </field>
         </record>

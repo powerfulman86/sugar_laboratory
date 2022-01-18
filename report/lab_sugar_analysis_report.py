@@ -28,22 +28,22 @@ class LabSugarAnalysisReport(models.Model):
     entry_day = fields.Integer(string="Day")
     state = fields.Selection(AVAILABLE_STATUS, string='state')
     season_id = fields.Many2one(comodel_name="lab.season", string="Season")
-    season_estimate_daily = fields.Float(string="Season Daily Estimate", )
+    season_estimate_daily = fields.Float(string="Season Daily Estimate", group_operator="avg")
     can_crashed_ton = fields.Float(string="Can Crashed / Ton", )
-    can_sweetness = fields.Float(string="Sweetness", )
-    juice_mix_purity = fields.Float(string="Juice mixed Purity", )
-    juice_main_val = fields.Float(string="Juice Main Val", )
-    juice_lab_val = fields.Float(string="Juice Lab Val", )
-    first_squeeze_extract = fields.Float(string="First Squeeze Extract", )
-    berx_juice_mix = fields.Float(string="Berx Juice Mix", )
-    extract_125_fiber = fields.Float(string="Extract 12.5 Fiber", )
+    can_sweetness = fields.Float(string="Sweetness", group_operator="avg")
+    juice_mix_purity = fields.Float(string="Juice mixed Purity", group_operator="avg")
+    juice_main_val = fields.Float(string="Juice Main Val", group_operator="avg")
+    juice_lab_val = fields.Float(string="Juice Lab Val", group_operator="avg")
+    first_squeeze_extract = fields.Float(string="First Squeeze Extract", group_operator="avg")
+    berx_juice_mix = fields.Float(string="Berx Juice Mix", group_operator="avg")
+    extract_125_fiber = fields.Float(string="Extract 12.5 Fiber", group_operator="avg")
     sugar_a_ton = fields.Float(string="Sugar A \ Ton", )
     sugar_brown_ton = fields.Float(string="Sugar Brown \ Ton", )
     sugar_b_ton = fields.Float(string="Sugar B \ Ton", )
     sugar_produced_ton = fields.Float(string="Sugar Produced - Ton", )
-    can_sugar_rate = fields.Float(string="Can Sugar Rate", )
-    sugar_a_colour = fields.Float(string="Sugar A \ Colour", )
-    sugar_b_colour = fields.Float(string="Sugar B \ Colour", )
+    can_sugar_rate = fields.Float(string="Can Sugar Rate", group_operator="avg")
+    sugar_a_colour = fields.Float(string="Sugar A \ Colour", group_operator="avg")
+    sugar_b_colour = fields.Float(string="Sugar B \ Colour", group_operator="avg")
     moulas_qty_ton = fields.Float(string="Moulas Qty\Ton", )
     moulas_brix = fields.Float(string="Moulas Brix", )
     moulas_purity = fields.Float(string="Moulas Purity", )
@@ -51,15 +51,15 @@ class LabSugarAnalysisReport(models.Model):
     lose_bagas = fields.Float(string="Bagas Lose", )
     lose_mud = fields.Float(string="Mud Lose", )
     lose_total = fields.Float(string="Total Lose", )
-    water_raw_fiber = fields.Float(string="Water Raw Fiber", )
-    bagas_humidity = fields.Float(string="Bagas Humidity", )
+    water_raw_fiber = fields.Float(string="Water Raw Fiber", group_operator="avg")
+    bagas_humidity = fields.Float(string="Bagas Humidity", group_operator="avg")
     brix_sherbat = fields.Float(string="Brix Sherbat", )
-    juice_clear_lees = fields.Float(string="Juice Clear Lees", )
+    juice_clear_lees = fields.Float(string="Juice Clear Lees", group_operator="avg")
     steam_amount = fields.Float(string="Steam Amount", )
     fuel_coal_qty = fields.Float(string="Fuel Coal Qty", )
     mazout_used = fields.Float(string="Mazout Used", )
     gas_used = fields.Float(string="Gas Used", )
-    steam_avr = fields.Float(string="Steam Per Ton")
+    steam_avr = fields.Float(string="Steam Per Ton" , group_operator="avg")
     down_time = fields.Integer(string="Down Time", )
 
     def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
@@ -76,7 +76,7 @@ class LabSugarAnalysisReport(models.Model):
                     l.state as state,
                     l.season_id as season_id,
                     l.season_estimate_daily as season_estimate_daily,
-                    l.down_time as down_time,
+                    sum(l.down_time) as down_time,
                     sum(l.can_crashed_ton) as  can_crashed_ton,
                     sum(l.can_sweetness) as can_sweetness,
                     sum(l.juice_mix_purity) as juice_mix_purity,
@@ -129,8 +129,7 @@ class LabSugarAnalysisReport(models.Model):
                     l.entry_day,
                     l.state,
                     l.season_id,
-                    l.season_estimate_daily,
-                    l.down_time %s
+                    l.season_estimate_daily %s
                 """ % groupby
 
         return '%s (SELECT %s FROM %s WHERE l.id IS NOT NULL GROUP BY %s)' % (with_, select_, from_, groupby_)

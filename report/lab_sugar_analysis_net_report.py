@@ -11,27 +11,28 @@ class LabSugarAnalysisNetReport(models.Model):
     _auto = False
 
     name = fields.Char('Description')
-    branch_id = fields.Many2one(comodel_name="res.branch", string="Branch",)
-    entry_date = fields.Date(string="Transaction Date",)
+    branch_id = fields.Many2one(comodel_name="res.branch", string="Branch", )
+    entry_date = fields.Date(string="Transaction Date", )
     entry_month = fields.Integer(string="Month")
     entry_day = fields.Integer(string="Day")
     season_id = fields.Many2one(comodel_name="lab.season", string="Season", index=True, help='This is branch to set')
     season_estimate_daily = fields.Float(string="Season Daily Estimate", )
-    can_crashed_ton = fields.Float(string="Can Crashed / Ton", required=True, )
-    can_sweetness = fields.Float(string="Sweetness", required=False, )
-    sugar_a_ton = fields.Float(string="Sugar A \ Ton", required=False, )
-    sugar_brown_ton = fields.Float(string="Sugar Brown \ Ton", required=False, )
-    sugar_b_ton = fields.Float(string="Sugar B \ Ton", required=False, )
+    can_crashed_ton = fields.Float(string="Can Crashed / Ton", )
+    can_sweetness = fields.Float(string="Sweetness", )
+    sugar_a_ton = fields.Float(string="Sugar A \ Ton", )
+    sugar_brown_ton = fields.Float(string="Sugar Brown \ Ton", )
+    sugar_b_ton = fields.Float(string="Sugar B \ Ton", )
     sugar_produced_ton = fields.Float(string="Sugar Produced - Ton", )
     can_sugar_rate = fields.Float(string="Can Sugar Rate", )
-    sugar_a_colour = fields.Float(string="Sugar A \ Colour", required=False, )
-    sugar_b_colour = fields.Float(string="Sugar B \ Colour", required=False, )
-    moulas_qty_ton = fields.Float(string="Moulas Qty\Ton", required=False, )
-    fuel_coal_qty = fields.Float(string="Fuel Coal Qty", required=False, )
-    mazout_used = fields.Float(string="Mazout Used", required=False, )
-    gas_used = fields.Float(string="Gas Used", required=False, )
-    steam_amount = fields.Float(string="Steam Amount", required=False, default=0)
+    sugar_a_colour = fields.Float(string="Sugar A \ Colour", )
+    sugar_b_colour = fields.Float(string="Sugar B \ Colour", )
+    moulas_qty_ton = fields.Float(string="Moulas Qty\Ton", )
+    fuel_coal_qty = fields.Float(string="Fuel Coal Qty", )
+    mazout_used = fields.Float(string="Mazout Used", )
+    gas_used = fields.Float(string="Gas Used", )
+    steam_amount = fields.Float(string="Steam Amount", )
     steam_avr = fields.Float(string="Steam Per Ton")
+    down_time = fields.Integer(string="Down Time", )
 
     def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
         with_ = ("WITH %s" % with_clause) if with_clause else ""
@@ -45,6 +46,7 @@ class LabSugarAnalysisNetReport(models.Model):
                     l.entry_day as entry_day,
                     l.season_id as season_id,
                     l.season_estimate_daily as season_estimate_daily,
+                    sum(l.down_time) as down_time,
                     sum(l.can_crashed_ton) as  can_crashed_ton,
                     sum(l.can_sweetness) as can_sweetness,
                     sum(l.sugar_a_ton) as   sugar_a_ton,
