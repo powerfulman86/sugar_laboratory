@@ -124,9 +124,6 @@ class LabSugarAnalysisReport(models.Model):
                     l.name,
                     l.branch_id,
                     l.entry_id,
-                    l.entry_date,
-                    l.entry_month,
-                    l.entry_day,
                     l.state,
                     l.season_id,
                     l.season_estimate_daily %s
