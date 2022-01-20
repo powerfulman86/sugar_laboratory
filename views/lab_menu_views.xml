@@ -5,13 +5,37 @@
         <menuitem name="Sugar Laboratory" id="sugar_laboratory"
                   web_icon="sugar_laboratory,static/description/icon.png"/>
 
-        <!-- menu categories -->
+        <!-- Dashboard -->
         <menuitem name="DashBoard" id="menu_dashboard" parent="sugar_laboratory" sequence="1"/>
-        <menuitem name="Transaction" id="menu_Transaction" parent="sugar_laboratory" sequence="2"/>
-        <menuitem name="Reporting" id="menu_reporting" parent="sugar_laboratory" sequence="11"/>
-        <menuitem name="Configuration" id="menu_configuration" parent="sugar_laboratory" sequence="12"/>
+        <menuitem id="menu_sugar_laboratory" parent="menu_dashboard" sequence="1"
+                  action="action_sugar_analysis"/>
 
-        <!-- actions -->
+        <!--Transactions-->
+        <menuitem name="Transaction" id="menu_Transaction" parent="sugar_laboratory" sequence="2"/>
+        <menuitem id="menu_analysis_branch" name="Sugar Lab Analysis" parent="menu_Transaction"
+                  action="action_sugar_analysis" sequence="1"/>
+
+        <!--Reporting-->
+        <menuitem name="Reporting"
+                  id="menu_reporting"
+                  parent="sugar_laboratory"
+                  groups="sugar_laboratory.sugar_lab_branch_manager"
+                  sequence="11"/>
+        <menuitem id="menu_sugar_analysis_report" name="Sugar Lab Analysis Report" parent="menu_reporting"
+                  action="action_sugar_analysis_report" sequence="2"/>
+
+        <menuitem id="menu_sugar_analysis_net_report" name="Sugar Lab Analysis Net Report" parent="menu_reporting"
+                  action="action_sugar_analysis_net_report" sequence="3"/>
+
+        <menuitem id="menu_sugar_operation_daily_report" name="Sugar Operation Daily Report" parent="menu_reporting"
+                  action="action_sugar_operation_daily_report" sequence="4"/>
+
+        <!--Configuration-->
+        <menuitem name="Configuration"
+                  id="menu_configuration"
+                  parent="sugar_laboratory"
+                  groups="sugar_laboratory.sugar_lab_admin"
+                  sequence="12"/>
         <menuitem id="menu_malfunction_type" name="Malfunction Types" parent="menu_configuration"
                   action="action_malfunction_type_list" sequence="1"/>
         <menuitem id="menu_season" name="Seasons" parent="menu_configuration"
@@ -19,16 +43,5 @@
         <menuitem id="menu_season_estimate" name="Seasons Estimate" parent="menu_configuration"
                   action="action_season_estimate_list" sequence="2"/>
 
-        <menuitem id="menu_analysis_branch" name="Sugar Lab Analysis" parent="menu_Transaction"
-                  action="action_sugar_analysis" sequence="1"/>
-
-        <menuitem id="menu_sugar_analysis_report" name="Sugar Lab Analysis Report" parent="menu_reporting"
-                  action="action_sugar_analysis_report" sequence="2"/>
-
-        <menuitem id="menu_sugar_analysis_net_report" name="Sugar Lab Analysis Net Report" parent="menu_reporting"
-                  action="action_sugar_analysis_net_report" sequence="3"/>
-
-        <menuitem id="menu_sugar_laboratory" parent="menu_dashboard" sequence="1"
-                  action="action_sugar_analysis"/>
     </data>
 </odoo>

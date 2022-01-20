@@ -157,7 +157,7 @@ class LabSeasonEstimateLine(models.Model):
     sequence = fields.Integer(string='Sequence', default=10)
     estimate_id = fields.Many2one('lab.season.estimate', ondelete='cascade', index=True, copy=False)
     season_id = fields.Many2one(comodel_name="lab.season", related="estimate_id.season_id", string="Season",
-                                required=True, index=True)
+                                required=True, index=True, store=True)
     branch_id = fields.Many2one("res.branch", string="Branch", required=True, index=True, )
     season_days = fields.Integer(string="Season Days", required=True, )
     sugar_produced_ton = fields.Float(string="Sugar Produced - Ton", required=True, store=True, default=0)

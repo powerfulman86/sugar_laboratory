@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="view_sugar_lab_analysis_search" model="ir.ui.view">
-            <field name="name">lab.sugar.analysis.report.search</field>
-            <field name="model">lab.sugar.analysis.report</field>
+        <record id="view_sugar_operation_daily_search" model="ir.ui.view">
+            <field name="name">view.sugar.daily.operation.report.search</field>
+            <field name="model">lab.sugar.daily.operation.report</field>
             <field name="arch" type="xml">
-                <search string="Lab Analysis Report Search">
+                <search string="Sugar Daily Operation Report Search">
                     <field name="season_id"/>
                     <field name="branch_id"/>
                     <field name="entry_id"/>
@@ -26,62 +26,47 @@
             </field>
         </record>
 
-        <record id="view_sugar_lab_analysis_pivot" model="ir.ui.view">
-            <field name="name">lab.sugar.analysis.report.pivot</field>
-            <field name="model">lab.sugar.analysis.report</field>
+        <record id="view_sugar_operation_daily_pivot" model="ir.ui.view">
+            <field name="name">view.sugar.daily.operation.report.pivot</field>
+            <field name="model">lab.sugar.daily.operation.report</field>
             <field name="arch" type="xml">
-                <pivot string="Lab Analysis Report" disable_linking="True">
+                <pivot string="Sugar Daily Operation Report" disable_linking="True">
                     <field name="branch_id" type="row"/>
                     <field name="season_id" type="row"/>
 <!--                    <field name="entry_id" type="measure"/>-->
                     <field name="season_estimate_daily" type="measure"/>
                     <field name="can_crashed_ton" type="measure"/>
                     <field name="can_sweetness" type="measure"/>
-                    <field name="juice_mix_purity" type="measure"/>
-                    <field name="juice_main_val" type="measure"/>
-                    <field name="berx_juice_mix" type="measure"/>
-                    <field name="extract_125_fiber" type="measure"/>
                     <field name="sugar_a_ton" type="measure"/>
                     <field name="sugar_brown_ton" type="measure"/>
                     <field name="sugar_b_ton" type="measure"/>
                     <field name="sugar_produced_ton" type="measure"/>
-                    <field name="can_sugar_rate" type="measure"/>
-                    <field name="sugar_a_colour" type="measure"/>
                     <field name="moulas_qty_ton" type="measure"/>
-                    <field name="moulas_purity" type="measure"/>
-                    <field name="lose_moulas" type="measure"/>
-                    <field name="lose_bagas" type="measure"/>
-                    <field name="lose_mud" type="measure"/>
-                    <field name="lose_total" type="measure"/>
-                    <field name="water_raw_fiber" type="measure"/>
-                    <field name="bagas_humidity" type="measure"/>
-                    <field name="brix_sherbat" type="measure"/>
-                    <field name="steam_avr" type="measure"/>
                     <field name="fuel_coal_qty" type="measure"/>
                     <field name="mazout_used" type="measure"/>
+                    <field name="gas_used" type="measure"/>
                 </pivot>
             </field>
         </record>
 
-        <record id="view_sugar_lab_analysis_graph" model="ir.ui.view">
-            <field name="name">lab.sugar.analysis.report.graph</field>
-            <field name="model">lab.sugar.analysis.report</field>
+        <record id="view_sugar_operation_daily_graph" model="ir.ui.view">
+            <field name="name">view.sugar.daily.operation.report.graph</field>
+            <field name="model">lab.sugar.daily.operation.report</field>
             <field name="arch" type="xml">
-                <graph string="Lab Analysis Report" type="line">
+                <graph string="Lab Net Analysis Report" type="line">
                     <field name="branch_id" type="row"/>
                     <field name="can_crashed_ton" type="measure"/>
                 </graph>
             </field>
         </record>
 
-        <record id="action_sugar_analysis_report" model="ir.actions.act_window">
-            <field name="name">Lab Analysis Report</field>
-            <field name="res_model">lab.sugar.analysis.report</field>
+        <record id="action_sugar_operation_daily_report" model="ir.actions.act_window">
+            <field name="name">Sugar Daily Operation Report</field>
+            <field name="res_model">lab.sugar.daily.operation.report</field>
             <field name="view_mode">pivot,graph</field>
             <field name="view_id"/>
             <!--  force empty  -->
-            <field name="help">This report performs analysis on Sugar Lab Transaction.</field>
+            <field name="help">This report performs analysis on Sugar Net Analysis Transaction.</field>
         </record>
-
     </data>
 </odoo>
