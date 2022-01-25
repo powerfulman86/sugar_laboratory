@@ -221,11 +221,13 @@ class LabMalfunctionsBranch(models.Model):
 
     name = fields.Char()
     sequence = fields.Integer(string='Sequence', default=10)
-    analysis_id = fields.Many2one(comodel_name="lab.sugar.analysis", string="Malfunction Analysis",
-                                  required=True, )
-    branch_id = fields.Many2one(comodel_name="res.branch", related='analysis_id.branch_id', string="Branch",
+    analysis_id = fields.Many2one(comodel_name="lab.sugar.analysis", string="Malfunction Analysis", required=True,
+                                  store=True)
+    entry_id = fields.Integer(string="Entry Number", related='analysis_id.entry_id', group_operator='', store=True)
+    entry_date = fields.Date(string="Transaction Date", related='analysis_id.entry_date', tracking=True, store=True)
+    season_id = fields.Many2one(comodel_name="lab.season", string="Season", related='analysis_id.season_id', store=True)
+    branch_id = fields.Many2one(comodel_name="res.branch", related='analysis_id.branch_id', string="Branch", store=True,
                                 index=True, tracking=1, help='This is branch to set malfunction for')
-
     line_id = fields.Many2one(comodel_name="res.branch.sugar.line", string="Sugar Line", required=True, )
     malfunction_id = fields.Many2one(comodel_name="lab.malfunctions", string="Malfunction", required=True, )
     down_time = fields.Integer(string="Down Time/m", required=False, default='0')

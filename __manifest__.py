@@ -15,6 +15,7 @@
         'report/lab_sugar_analysis_report_view.xml',
         'report/lab_sugar_analysis_report_net_view.xml',
         'report/sugar_net_analysis_report.xml',
+        'report/lab_sugar_malfunction_report_view.xml',
         'views/lab_menu_views.xml',
         'views/lab_sugar_views.xml',
     ],

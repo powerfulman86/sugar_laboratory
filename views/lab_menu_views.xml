@@ -30,6 +30,9 @@
         <menuitem id="menu_sugar_operation_daily_report" name="Sugar Operation Daily Report" parent="menu_reporting"
                   action="action_sugar_operation_daily_report" sequence="4"/>
 
+        <menuitem id="menu_sugar_malfunction_daily_report" name="Sugar Malfunction Report" parent="menu_reporting"
+                  action="action_sugar_malfunction_report" sequence="5"/>
+
         <!--Configuration-->
         <menuitem name="Configuration"
                   id="menu_configuration"
