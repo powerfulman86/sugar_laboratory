@@ -116,7 +116,7 @@
                   parent="menu_configuration"
                   action="action_view_sugar_pool"/>
 
-        <!--Sugar analysis-->
+        <!--Sugar analysis Types-->
         <record id="view_sugar_analysis_type_tree" model="ir.ui.view">
             <field name="name">sugar.analysis.type.tree</field>
             <field name="model">sugar.analysis.type</field>

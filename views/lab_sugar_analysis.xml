@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <record id="lab_sugar_analysis_action_draft" model="ir.actions.server">
+            <field name="name">Set To Draft</field>
+            <field name="model_id" ref="model_lab_sugar_analysis"/>
+            <field name="binding_model_id" ref="model_lab_sugar_analysis"/>
+            <field name="binding_view_types">list</field>
+            <field name="groups" eval="[(4, ref('sugar_laboratory.sugar_lab_admin'))]"/>
+            <field name="state">code</field>
+            <field name="code">action = records.action_set_draft()</field>
+        </record>
+
         <record id="lab_sugar_analysis_view_search" model="ir.ui.view">
             <field name="name">lab.sugar.analysis.select</field>
             <field name="model">lab.sugar.analysis</field>
