@@ -116,10 +116,8 @@
                                                options="{'no_create': True}"
                                                domain="[('branch_id','=',parent.branch_id)]"/>
                                         <field name="malfunction_id"/>
-                                        <field name="date_start"/>
-                                        <field name="date_end"/>
                                         <field name="branch_id" invisible="1"/>
-                                        <field name="down_time" readonly="1"/>
+                                        <field name="down_time"/>
                                         <field name="notes"/>
                                     </tree>
                                 </field>

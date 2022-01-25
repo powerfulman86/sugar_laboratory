@@ -154,23 +154,23 @@ msgstr "يجب تسجيل الرقم التقديري للموسم والرقم 
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_net_search
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_search
 msgid "Branch"
-msgstr "الفرع"
+msgstr "المصنع"
 
 #. module: sugar_laboratory
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_form
 msgid "Branch Approve"
-msgstr "موافقة الفرع"
+msgstr "موافقة المصنع"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis__state__branchapproved
 #: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis_report__state__branchapproved
 msgid "Branch Approved"
-msgstr "تمت موافقة الفرع"
+msgstr "تمت موافقة المصنع"
 
 #. module: sugar_laboratory
 #: model:res.groups,name:sugar_laboratory.sugar_lab_branch_manager
 msgid "Branch Manager"
-msgstr "مدير الفرع"
+msgstr "مدير المصنع"
 
 #. module: sugar_laboratory
 #: model:ir.model,name:sugar_laboratory.model_res_branch_sugar_line
@@ -183,7 +183,7 @@ msgstr "خط انتاج السكر"
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_line_form
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_line_tree
 msgid "Branch Sugar Lines"
-msgstr "خطوط انتاج السكر"
+msgstr "خطوط العصارات"
 
 #. module: sugar_laboratory
 #: model:ir.model,name:sugar_laboratory.model_res_branch_sugar_pool
@@ -670,7 +670,7 @@ msgstr "البحث في تقرير الرقابة والجودة التفصيل�
 #. module: sugar_laboratory
 #: model:ir.model,name:sugar_laboratory.model_lab_malfunctions_branch
 msgid "Lab Branch Malfunctions"
-msgstr "اعطال الفرع"
+msgstr "اعطال المصنع"
 
 #. module: sugar_laboratory
 #: model:ir.model,name:sugar_laboratory.model_lab_season
@@ -1328,14 +1328,14 @@ msgstr "الحلاوة"
 #: model:ir.model.fields,help:sugar_laboratory.field_lab_sugar_analysis__season_id
 #: model:ir.model.fields,help:sugar_laboratory.field_lab_sugar_analysis_net_report__season_id
 msgid "This is branch to set"
-msgstr "يجب تسجيل الفرع"
+msgstr "يجب تسجيل المصنع"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions_branch__branch_id
 #: model:ir.model.fields,help:sugar_laboratory.field_res_branch_sugar_line__branch_id
 #: model:ir.model.fields,help:sugar_laboratory.field_res_branch_sugar_pool__branch_id
 msgid "This is branch to set malfunction for"
-msgstr "اختيار الفرع المطلوب تسجيل عطل له"
+msgstr "اختيار المصنع المطلوب تسجيل عطل له"
 
 #. module: sugar_laboratory
 #: model_terms:ir.actions.act_window,help:sugar_laboratory.action_sugar_analysis_net_report

@@ -30,7 +30,7 @@ class LabSugarAnalysis(models.Model):
     name = fields.Char('Description')
     branch_id = fields.Many2one(comodel_name="res.branch", string="Branch", required=True, default=get_branch,
                                 index=True, help='This is branch to set')
-    entry_id = fields.Integer(string="Entry Number", required=True, tracking=True)
+    entry_id = fields.Integer(string="Entry Number", required=True, tracking=True, group_operator='')
     entry_date = fields.Date(string="Transaction Date", required=True, default=fields.Date.context_today, copy=False,
                              tracking=True)
     state = fields.Selection(AVAILABLE_STATUS, string='state', tracking=True, default=AVAILABLE_STATUS[0][0],
@@ -79,11 +79,15 @@ class LabSugarAnalysis(models.Model):
     gas_used = fields.Float(string="Gas Used", required=False, default=0)
     mazout_gas_rate = fields.Float(string="Mazout Gas rate", required=False, compute="_calculate_mazout_gas", default=0)
     mazout_total = fields.Float(string="Mazout Total", compute="_calculate_total_mazout", default=0)
-    steam_avr = fields.Float(string="Steam Per Ton", required=False, compute="_calculate_steam_avr",
-                             store=True)
+    steam_avr = fields.Float(string="Steam Per Ton", required=False, compute="_calculate_steam_avr", store=True)
 
     entry_month = fields.Integer(string="Month", required=False, compute="_set_month_day", store=True, )
     entry_day = fields.Integer(string="Day", required=False, compute="_set_month_day", store=True, )
+
+    @api.depends('malfunction_line.down_time')
+    def _down_time_all(self):
+        for rec in self.malfunction_line:
+            self.down_time = self.down_time + rec.down_time
 
     @api.onchange('entry_date')
     @api.depends('entry_date')
@@ -220,18 +224,5 @@ class LabMalfunctionsBranch(models.Model):
 
     line_id = fields.Many2one(comodel_name="res.branch.sugar.line", string="Sugar Line", required=True, )
     malfunction_id = fields.Many2one(comodel_name="lab.malfunctions", string="Malfunction", required=True, )
-
-    date_start = fields.Datetime(string="Start Date", required=True, default=fields.Date.context_today, copy=False)
-    date_end = fields.Datetime(string="End Date", required=True, default=fields.Date.context_today, copy=False)
-    down_time = fields.Integer(string="Down Time", required=False, )
+    down_time = fields.Integer(string="Down Time/m", required=False, default='0')
     notes = fields.Text('Notes')
-
-    @api.constrains('date_start', 'date_end')
-    def _date_validation(self):
-        for rec in self:
-            down_time = int((rec.date_end - rec.date_start).total_seconds() / 60.0)
-            if down_time and down_time <= 0:
-                raise ValidationError(_("Malfunction End Date Must Be Greater than start date !"))
-
-            rec.down_time = down_time
-            rec.analysis_id.down_time = (rec.analysis_id.down_time or 0.0) +  down_time
