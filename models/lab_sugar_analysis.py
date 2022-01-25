@@ -27,6 +27,14 @@ class LabSugarAnalysis(models.Model):
         else:
             return ''
 
+    @api.depends('malfunction_line.down_time')
+    def _down_time_all(self):
+        down_time = 0
+        for order in self:
+            for line in order.malfunction_line:
+                down_time += line.down_time
+            order.update({'down_time': down_time})
+
     name = fields.Char('Description')
     branch_id = fields.Many2one(comodel_name="res.branch", string="Branch", required=True, default=get_branch,
                                 index=True, help='This is branch to set')
@@ -40,7 +48,7 @@ class LabSugarAnalysis(models.Model):
     season_estimate_daily = fields.Float(string="Season Daily Estimate", required=False, )
     malfunction_line = fields.One2many(comodel_name="lab.malfunctions.branch", inverse_name="analysis_id",
                                        string="Malfunction Line", required=False, )
-    down_time = fields.Integer(string="Down Time", required=False, )
+    down_time = fields.Integer(string="Down Time/M", store=True, readonly=True, compute='_down_time_all', )
     entry_notes = fields.Html('Notes', help='Notes', tracking=True)
 
     can_crashed_ton = fields.Float(string="Can Crashed / Ton", required=True, default=0)
@@ -83,11 +91,6 @@ class LabSugarAnalysis(models.Model):
 
     entry_month = fields.Integer(string="Month", required=False, compute="_set_month_day", store=True, )
     entry_day = fields.Integer(string="Day", required=False, compute="_set_month_day", store=True, )
-
-    @api.depends('malfunction_line.down_time')
-    def _down_time_all(self):
-        for rec in self.malfunction_line:
-            self.down_time = self.down_time + rec.down_time
 
     @api.onchange('entry_date')
     @api.depends('entry_date')
