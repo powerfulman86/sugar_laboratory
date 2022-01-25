@@ -164,7 +164,8 @@ class LabSugarAnalysis(models.Model):
         self.state = 'approved'
 
     def action_set_draft(self):
-        self.state = 'draft'
+        if self.user_has_groups('sugar_laboratory.sugar_lab_admin'):
+            self.state = 'draft'
 
     @api.model
     def create(self, values):
