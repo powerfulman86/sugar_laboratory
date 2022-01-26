@@ -34,7 +34,8 @@ class LabMalfunctionReport(models.Model):
                        l.season_id as season_id,
                        l.line_id as line_id,
                        l.malfunction_id as malfunction_id,
-                       l.down_time as down_time
+                       l.down_time as down_time,
+                       l.notes as notes
                    """
 
         for field in fields.values():
@@ -57,7 +58,8 @@ class LabMalfunctionReport(models.Model):
                        l.season_id,
                        l.line_id,
                        l.malfunction_id,
-                       l.down_time %s
+                       l.down_time,
+                        l.notes %s
                    """ % groupby
 
         return '%s (SELECT %s FROM %s WHERE l.id IS NOT NULL GROUP BY %s)' % (with_, select_, from_, groupby_)

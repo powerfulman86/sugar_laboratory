@@ -46,10 +46,24 @@
             </field>
         </record>
 
+        <record id="view_sugar_malfunction_report_tree" model="ir.ui.view">
+            <field name="name">lab.malfunction.report.tree</field>
+            <field name="model">lab.malfunction.report</field>
+            <field name="arch" type="xml">
+                <graph string="Sugar Lines Malfunctions Report" type="line">
+                    <field name="season_id" type="row"/>
+                    <field name="branch_id"/>
+                    <field name="line_id" />
+                    <field name="down_time"/>
+                    <field name="notes"/>
+                </graph>
+            </field>
+        </record>
+
         <record id="action_sugar_malfunction_report" model="ir.actions.act_window">
             <field name="name">Sugar Daily Malfunction Report</field>
             <field name="res_model">lab.malfunction.report</field>
-            <field name="view_mode">pivot,graph</field>
+            <field name="view_mode">pivot,tree,graph</field>
             <field name="view_id"/>
             <!--  force empty  -->
             <field name="help">This report performs analysis on Daily Malfunctions.</field>

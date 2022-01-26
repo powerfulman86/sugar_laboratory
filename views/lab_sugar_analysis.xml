@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <record id="view_sugar_malfunction_tree" model="ir.ui.view">
+            <field name="name">lab.malfunctions.branch.tree</field>
+            <field name="model">lab.malfunctions.branch</field>
+            <field name="arch" type="xml">
+                <graph string="Sugar Lines Malfunctions Report" type="line">
+                    <field name="season_id" type="row"/>
+                    <field name="branch_id"/>
+                    <field name="line_id" />
+                    <field name="down_time"/>
+                    <field name="notes"/>
+                </graph>
+            </field>
+        </record>
+
         <record id="lab_sugar_analysis_action_draft" model="ir.actions.server">
             <field name="name">Set To Draft</field>
             <field name="model_id" ref="model_lab_sugar_analysis"/>
