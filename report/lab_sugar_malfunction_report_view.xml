@@ -51,7 +51,7 @@
             <field name="model">lab.malfunction.report</field>
             <field name="arch" type="xml">
                 <tree string="Sugar Lines Malfunctions Report">
-                    <field name="season_id" type="row"/>
+                    <field name="season_id"/>
                     <field name="branch_id"/>
                     <field name="line_id"/>
                     <field name="down_time"/>
@@ -64,6 +64,7 @@
             <field name="name">Sugar Daily Malfunction Report</field>
             <field name="res_model">lab.malfunction.report</field>
             <field name="view_mode">pivot,tree,graph</field>
+            <field name="context">{'create': False,'delete': False}</field>
             <field name="view_id"/>
             <!--  force empty  -->
             <field name="help">This report performs analysis on Daily Malfunctions.</field>
