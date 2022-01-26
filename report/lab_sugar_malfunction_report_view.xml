@@ -50,13 +50,13 @@
             <field name="name">lab.malfunction.report.tree</field>
             <field name="model">lab.malfunction.report</field>
             <field name="arch" type="xml">
-                <graph string="Sugar Lines Malfunctions Report" type="line">
+                <tree string="Sugar Lines Malfunctions Report">
                     <field name="season_id" type="row"/>
                     <field name="branch_id"/>
-                    <field name="line_id" />
+                    <field name="line_id"/>
                     <field name="down_time"/>
                     <field name="notes"/>
-                </graph>
+                </tree>
             </field>
         </record>
 
