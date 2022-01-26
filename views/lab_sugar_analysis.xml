@@ -119,12 +119,12 @@
                             <page string="Malfunctions">
                                 <field name="malfunction_line" widget="section_and_note_one2many" mode="tree"
                                        attrs="{'readonly': [('state', '!=', 'draft')]}">
-                                    <tree string="Malfunctions" editable="bottom">
+                                    <tree string="Malfunctions" editable="bottom" >
                                         <field name="sequence" widget="handle"/>
                                         <field name="line_id"
                                                options="{'no_create': True}"
                                                domain="[('branch_id','=',parent.branch_id)]"/>
-                                        <field name="malfunction_id"/>
+                                        <field name="malfunction_id" options="{'no_create': True}"/>
                                         <field name="branch_id" invisible="1"/>
                                         <field name="down_time"/>
                                         <field name="notes"/>
