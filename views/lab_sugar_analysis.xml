@@ -5,13 +5,13 @@
             <field name="name">lab.malfunctions.branch.tree</field>
             <field name="model">lab.malfunctions.branch</field>
             <field name="arch" type="xml">
-                <graph string="Sugar Lines Malfunctions Report" type="line">
-                    <field name="season_id" type="row"/>
+                <tree string="Sugar Lines Malfunctions Report">
+                    <field name="season_id"/>
                     <field name="branch_id"/>
                     <field name="line_id" />
                     <field name="down_time"/>
                     <field name="notes"/>
-                </graph>
+                </tree>
             </field>
         </record>
 
