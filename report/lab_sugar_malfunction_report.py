@@ -19,7 +19,9 @@ class LabMalfunctionReport(models.Model):
     branch_id = fields.Many2one(comodel_name="res.branch", string="Branch", )
     line_id = fields.Many2one(comodel_name="res.branch.sugar.line", string="Sugar Line",)
     malfunction_id = fields.Many2one(comodel_name="lab.malfunctions", string="Malfunction", )
-    down_time = fields.Integer(string="Down Time/m", required=False, default='0')
+    down_time = fields.Integer(string="Down Time/m", default='0')
+    down_time_hour = fields.Integer(string="Down Time/h",default='0')
+    down_time_day = fields.Integer(string="Down Time/d", default='0')
     notes = fields.Text('Notes')
 
     def _query(self, with_clause='', fields={}, groupby='', from_clause=''):
@@ -35,6 +37,8 @@ class LabMalfunctionReport(models.Model):
                        l.line_id as line_id,
                        l.malfunction_id as malfunction_id,
                        l.down_time as down_time,
+                       (l.down_time / 60) as down_time_hour,
+                       (l.down_time / (60 * 24)) as down_time_day,
                        l.notes as notes
                    """
 

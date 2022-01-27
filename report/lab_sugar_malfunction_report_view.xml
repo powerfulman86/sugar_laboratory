@@ -32,6 +32,8 @@
                     <field name="branch_id" type="row"/>
                     <field name="line_id" type="row"/>
                     <field name="down_time" type="measure"/>
+                    <field name="down_time_hour" type="measure"/>
+                    <field name="down_time_day" type="measure"/>
                 </pivot>
             </field>
         </record>
@@ -57,6 +59,8 @@
                     <field name="branch_id"/>
                     <field name="line_id"/>
                     <field name="down_time"/>
+                    <field name="down_time_hour"/>
+                    <field name="down_time_day"/>
                     <field name="notes"/>
                 </tree>
             </field>
