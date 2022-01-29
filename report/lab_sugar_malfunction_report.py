@@ -13,7 +13,7 @@ class LabMalfunctionReport(models.Model):
 
     name = fields.Char()
     analysis_id = fields.Many2one(comodel_name="lab.sugar.analysis", string="Malfunction Analysis", )
-    entry_id = fields.Integer(string="Entry Number", )
+    entry_id = fields.Integer(string="Entry Number", group_operator='')
     entry_date = fields.Date(string="Transaction Date", )
     season_id = fields.Many2one(comodel_name="lab.season", string="Season", )
     branch_id = fields.Many2one(comodel_name="res.branch", string="Branch", )
