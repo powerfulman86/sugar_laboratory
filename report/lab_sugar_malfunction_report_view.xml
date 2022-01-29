@@ -32,6 +32,8 @@
                 <pivot string="Sugar Lines Malfunctions Report" disable_linking="True">
                     <field name="season_id" type="row"/>
                     <field name="branch_id" type="row"/>
+                    <field name="entry_date" type="row"/>
+                    <field name="entry_id" type="row"/>
                     <field name="malfunction_id" type="row"/>
                     <field name="line_id" type="row"/>
                     <field name="down_time" type="measure"/>
@@ -60,6 +62,8 @@
             <field name="arch" type="xml">
                 <tree string="Sugar Lines Malfunctions Report">
                     <field name="season_id"/>
+                    <field name="entry_id" type="row"/>
+                    <field name="entry_date" type="row"/>
                     <field name="branch_id"/>
                     <field name="line_id"/>
                     <field name="malfunction_id"/>
