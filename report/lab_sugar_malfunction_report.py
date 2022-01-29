@@ -13,14 +13,14 @@ class LabMalfunctionReport(models.Model):
 
     name = fields.Char()
     analysis_id = fields.Many2one(comodel_name="lab.sugar.analysis", string="Malfunction Analysis", )
-    entry_id = fields.Integer(string="Entry Number",)
-    entry_date = fields.Date(string="Transaction Date",)
+    entry_id = fields.Integer(string="Entry Number", )
+    entry_date = fields.Date(string="Transaction Date", )
     season_id = fields.Many2one(comodel_name="lab.season", string="Season", )
     branch_id = fields.Many2one(comodel_name="res.branch", string="Branch", )
-    line_id = fields.Many2one(comodel_name="res.branch.sugar.line", string="Sugar Line",)
+    line_id = fields.Many2one(comodel_name="res.branch.sugar.line", string="Sugar Line", )
     malfunction_id = fields.Many2one(comodel_name="lab.malfunctions", string="Malfunction", )
     down_time = fields.Float(string="Down Time/m", default='0')
-    down_time_hour = fields.Float(string="Down Time/h",default='0')
+    down_time_hour = fields.Float(string="Down Time/h", default='0')
     down_time_day = fields.Float(string="Down Time/d", default='0')
     notes = fields.Text('Notes')
 
@@ -36,9 +36,9 @@ class LabMalfunctionReport(models.Model):
                        l.season_id as season_id,
                        l.line_id as line_id,
                        l.malfunction_id as malfunction_id,
-                       l.down_time as down_time,
-                       (l.down_time / 60) as down_time_hour,
-                       (l.down_time / (60 * 24)) as down_time_day,
+                       l.down_time::FLOAT as down_time,
+                       (l.down_time::FLOAT / 60)::FLOAT as down_time_hour,
+                       (l.down_time::FLOAT / (60 * 24))::FLOAT as down_time_day,
                        l.notes as notes
                    """
 
