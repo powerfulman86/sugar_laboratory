@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-13 06:41+0000\n"
-"PO-Revision-Date: 2022-01-13 06:41+0000\n"
+"POT-Creation-Date: 2022-01-30 08:01+0000\n"
+"PO-Revision-Date: 2022-01-30 08:01+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -85,7 +85,7 @@ msgstr ""
 #. module: sugar_laboratory
 #: model:res.groups,name:sugar_laboratory.sugar_lab_admin
 msgid "Admin"
-msgstr ""
+msgstr "مدير النظام"
 
 #. module: sugar_laboratory
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_form
@@ -97,6 +97,7 @@ msgstr "اعتماد"
 #: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_season_estimate__state__approved
 #: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis__state__approved
 #: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis_report__state__approved
+#: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_daily_operation_report__state__approved
 msgid "Approved"
 msgstr "تم الاعتماد"
 
@@ -143,16 +144,20 @@ msgid "Both Season Estimate And Season Daily Estimate must be set."
 msgstr "يجب تسجيل الرقم التقديري للموسم والرقم التقديري اليومي"
 
 #. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunction_report__branch_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__branch_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season_estimate_line__branch_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__branch_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__branch_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__branch_id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__branch_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_res_branch_sugar_line__branch_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_res_branch_sugar_pool__branch_id
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_search
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_net_search
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_search
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_malfunction_report_search
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_operation_daily_search
 msgid "Branch"
 msgstr "المصنع"
 
@@ -164,6 +169,7 @@ msgstr "موافقة المصنع"
 #. module: sugar_laboratory
 #: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis__state__branchapproved
 #: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis_report__state__branchapproved
+#: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_daily_operation_report__state__branchapproved
 msgid "Branch Approved"
 msgstr "تمت موافقة المصنع"
 
@@ -208,6 +214,7 @@ msgstr "بركس الشربات"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__can_crashed_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__can_crashed_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__can_crashed_ton
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__can_crashed_ton
 msgid "Can Crashed / Ton"
 msgstr "القصب المعصور (طن)"
 
@@ -233,6 +240,7 @@ msgstr "لا يمكن تكرار الارقام التقديرية للموسم"
 #. module: sugar_laboratory
 #: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_season_estimate__state__cancel
 #: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis_report__state__cancel
+#: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_daily_operation_report__state__cancel
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.season_estimate_view_form
 msgid "Cancel"
 msgstr "الغاء"
@@ -339,8 +347,9 @@ msgstr "لوحة التحكم"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__entry_day
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__entry_day
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__entry_day
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__entry_day
 msgid "Day"
-msgstr ""
+msgstr "اليوم"
 
 #. module: sugar_laboratory
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_form
@@ -350,6 +359,7 @@ msgstr "اعتماد الادارة"
 #. module: sugar_laboratory
 #: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis__state__deptapproved
 #: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis_report__state__deptapproved
+#: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_daily_operation_report__state__deptapproved
 msgid "Dept. Approved"
 msgstr "تم الاعتماد من الادارة"
 
@@ -358,6 +368,7 @@ msgstr "تم الاعتماد من الادارة"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__name
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__name
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__name
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__name
 #: model:ir.model.fields,field_description:sugar_laboratory.field_res_branch_sugar_line__name
 #: model:ir.model.fields,field_description:sugar_laboratory.field_res_branch_sugar_pool__name
 #: model:ir.model.fields,field_description:sugar_laboratory.field_sugar_analysis_type__name
@@ -371,6 +382,7 @@ msgid "Details"
 msgstr "التفاصيل"
 
 #. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunction_report__display_name
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__display_name
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__display_name
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__display_name
@@ -379,6 +391,7 @@ msgstr "التفاصيل"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__display_name
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__display_name
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__display_name
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__display_name
 #: model:ir.model.fields,field_description:sugar_laboratory.field_res_branch_sugar_line__display_name
 #: model:ir.model.fields,field_description:sugar_laboratory.field_res_branch_sugar_pool__display_name
 #: model:ir.model.fields,field_description:sugar_laboratory.field_sugar_analysis_type__display_name
@@ -386,45 +399,68 @@ msgid "Display Name"
 msgstr "الاسم المستخدم"
 
 #. module: sugar_laboratory
-#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__down_time
-#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__down_time
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__down_time
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__down_time
 msgid "Down Time"
 msgstr "وقت العطل"
 
 #. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__down_time
+msgid "Down Time/M"
+msgstr "وقت العطل/يوم"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunction_report__down_time_day
+msgid "Down Time/d"
+msgstr ""
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunction_report__down_time_hour
+msgid "Down Time/h"
+msgstr "وقت العطل/ساعه"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunction_report__down_time
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__down_time
+msgid "Down Time/m"
+msgstr "وقت العطل/دقيقه"
+
+#. module: sugar_laboratory
 #: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_season_estimate__state__draft
 #: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis__state__draft
 #: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_analysis_report__state__draft
+#: model:ir.model.fields.selection,name:sugar_laboratory.selection__lab_sugar_daily_operation_report__state__draft
 msgid "Draft"
 msgstr "مسوده"
 
 #. module: sugar_laboratory
-#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__date_end
-msgid "End Date"
-msgstr "تاريخ النهايه"
-
-#. module: sugar_laboratory
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_search
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_search
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_malfunction_report_search
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_operation_daily_search
 msgid "Entry"
 msgstr "اليومية"
 
 #. module: sugar_laboratory
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_net_search
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_search
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_operation_daily_search
 msgid "Entry Day"
-msgstr ""
+msgstr "اليوم"
 
 #. module: sugar_laboratory
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_net_search
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_search
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_operation_daily_search
 msgid "Entry Month"
-msgstr ""
+msgstr "الشهر"
 
 #. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunction_report__entry_id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__entry_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__entry_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__entry_id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__entry_id
 msgid "Entry Number"
 msgstr "رقم اليومية"
 
@@ -501,6 +537,7 @@ msgstr "من"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__fuel_coal_qty
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__fuel_coal_qty
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__fuel_coal_qty
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__fuel_coal_qty
 msgid "Fuel Coal Qty"
 msgstr "الوقود كجم فحم / طن.ق"
 
@@ -508,6 +545,7 @@ msgstr "الوقود كجم فحم / طن.ق"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__gas_used
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__gas_used
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__gas_used
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__gas_used
 msgid "Gas Used"
 msgstr "الغاز الطبيعي م3"
 
@@ -515,6 +553,8 @@ msgstr "الغاز الطبيعي م3"
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_search
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_net_search
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_search
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_malfunction_report_search
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_operation_daily_search
 msgid "Group By"
 msgstr "تجميع بواسطة"
 
@@ -524,6 +564,7 @@ msgid "Helps you manage Sugar Lab."
 msgstr "المساعدة في يومية معامل السكر"
 
 #. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunction_report__id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__id
@@ -532,6 +573,7 @@ msgstr "المساعدة في يومية معامل السكر"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_res_branch_sugar_line__id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_res_branch_sugar_pool__id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_sugar_analysis_type__id
@@ -673,6 +715,11 @@ msgid "Lab Branch Malfunctions"
 msgstr "اعطال المصنع"
 
 #. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_operation_daily_graph
+msgid "Lab Net Analysis Report"
+msgstr ""
+
+#. module: sugar_laboratory
 #: model:ir.model,name:sugar_laboratory.model_lab_season
 msgid "Lab Season"
 msgstr "المواسم"
@@ -708,6 +755,7 @@ msgid "Laboratory Malfunctions"
 msgstr "الاعطال"
 
 #. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunction_report____last_update
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions____last_update
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch____last_update
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season____last_update
@@ -716,6 +764,7 @@ msgstr "الاعطال"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis____last_update
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report____last_update
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report____last_update
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report____last_update
 #: model:ir.model.fields,field_description:sugar_laboratory.field_res_branch_sugar_line____last_update
 #: model:ir.model.fields,field_description:sugar_laboratory.field_res_branch_sugar_pool____last_update
 #: model:ir.model.fields,field_description:sugar_laboratory.field_sugar_analysis_type____last_update
@@ -749,6 +798,11 @@ msgid "Last Updated on"
 msgstr "تاريخ اخر تعديل"
 
 #. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_malfunction_report_search
+msgid "Line"
+msgstr "العصارة"
+
+#. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__message_main_attachment_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__message_main_attachment_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__message_main_attachment_id
@@ -761,20 +815,17 @@ msgid "Main Attachment"
 msgstr "مرفق رئيسي"
 
 #. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunction_report__malfunction_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__malfunction_id
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_malfunction_report_search
 msgid "Malfunction"
 msgstr "اعطال"
 
 #. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunction_report__analysis_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__analysis_id
 msgid "Malfunction Analysis"
 msgstr "تحليل الاعطال"
-
-#. module: sugar_laboratory
-#: code:addons/sugar_laboratory/models/lab_sugar_analysis.py:0
-#, python-format
-msgid "Malfunction End Date Must Be Greater than start date !"
-msgstr ""
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__malfunction_line
@@ -821,6 +872,7 @@ msgstr "إجمالي المازوت المستهلك (طن)"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__mazout_used
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__mazout_used
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__mazout_used
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__mazout_used
 msgid "Mazout Used"
 msgstr "المازوت المستهلك (طن)"
 
@@ -852,8 +904,9 @@ msgstr ""
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__entry_month
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__entry_month
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__entry_month
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__entry_month
 msgid "Month"
-msgstr ""
+msgstr "الشهر"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__moulas_brix
@@ -874,9 +927,11 @@ msgid "Moulas Purity"
 msgstr "نقاوة المولاس"
 
 #. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season_estimate_line__moulas_qty_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__moulas_qty_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__moulas_qty_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__moulas_qty_ton
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__moulas_qty_ton
 msgid "Moulas Qty\\Ton"
 msgstr "كمية المولاس (طن)"
 
@@ -887,6 +942,7 @@ msgid "Mud Lose"
 msgstr "فقد الطينة%ق"
 
 #. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunction_report__name
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__name
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__name
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season_estimate__name
@@ -937,8 +993,13 @@ msgid "Next Activity Type"
 msgstr ""
 
 #. module: sugar_laboratory
-#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__notes
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__notes
+msgid "Notes"
+msgstr "شرح العطل"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunction_report__notes
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__notes
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season_estimate__notes
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__entry_notes
 #: model:ir.model.fields,field_description:sugar_laboratory.field_res_branch_sugar_line__notes
@@ -953,7 +1014,7 @@ msgstr "ملاحظات"
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_line_form
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_pool_form
 msgid "Notes ..."
-msgstr ""
+msgstr "ملاحظات ..."
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions__message_needaction_counter
@@ -1023,6 +1084,8 @@ msgstr "اليوميه"
 #. module: sugar_laboratory
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_search
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_search
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_malfunction_report_search
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_operation_daily_search
 msgid "Order Date"
 msgstr "تاريخ اليوميه"
 
@@ -1080,18 +1143,23 @@ msgstr ""
 #. module: sugar_laboratory
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_search
 msgid "Search Sugar Laboratory"
-msgstr ""
+msgstr "بحث يوميات السكر"
 
 #. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunction_report__season_id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__season_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season_estimate__season_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season_estimate_line__season_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__season_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__season_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__season_id
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__season_id
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_season_view_tree
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_search
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_net_search
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_search
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_malfunction_report_search
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_operation_daily_search
 msgid "Season"
 msgstr "الموسم"
 
@@ -1106,8 +1174,14 @@ msgstr "لا يمكن تكرار الموسم"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__season_estimate_daily
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__season_estimate_daily
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__season_estimate_daily
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__season_estimate_daily
 msgid "Season Daily Estimate"
 msgstr "تقديرات الموسم يومي"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season_estimate_line__season_days
+msgid "Season Days"
+msgstr "ايام الموسم"
 
 #. module: sugar_laboratory
 #: model:ir.actions.act_window,name:sugar_laboratory.action_season_estimate_list
@@ -1158,7 +1232,12 @@ msgstr ""
 #. module: sugar_laboratory
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_form
 msgid "Set Draft"
-msgstr ""
+msgstr "تحويل الى مسوده"
+
+#. module: sugar_laboratory
+#: model:ir.actions.server,name:sugar_laboratory.lab_sugar_analysis_action_draft
+msgid "Set To Draft"
+msgstr "تحويل الى مسوده"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions__active
@@ -1172,11 +1251,6 @@ msgstr "تحويل السجل الى غير فعال بدون حذفه"
 #: model:ir.model.fields,help:sugar_laboratory.field_lab_season__active
 msgid "Set active to false to hide the Season without removing it."
 msgstr "تحويل السجل الى غير فعال بدون حذفه"
-
-#. module: sugar_laboratory
-#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__date_start
-msgid "Start Date"
-msgstr "تاريخ البدايه"
 
 #. module: sugar_laboratory
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_search
@@ -1224,6 +1298,7 @@ msgstr "لون سكر أ "
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__sugar_a_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__sugar_a_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__sugar_a_ton
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__sugar_a_ton
 msgid "Sugar A \\ Ton"
 msgstr "سكر أ (طن)"
 
@@ -1236,7 +1311,7 @@ msgstr "انواع التحاليل "
 #: model:ir.model,name:sugar_laboratory.model_sugar_analysis_type
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_analysis_type_tree
 msgid "Sugar Analysis Type"
-msgstr ""
+msgstr "انواع التحاليل"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__sugar_b_colour
@@ -1249,6 +1324,7 @@ msgstr " لون سكر بني"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__sugar_b_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__sugar_b_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__sugar_b_ton
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__sugar_b_ton
 msgid "Sugar B \\ Ton"
 msgstr "سكر ب (طن)"
 
@@ -1256,8 +1332,27 @@ msgstr "سكر ب (طن)"
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__sugar_brown_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__sugar_brown_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__sugar_brown_ton
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__sugar_brown_ton
 msgid "Sugar Brown \\ Ton"
 msgstr "سكر بني (طن)"
+
+#. module: sugar_laboratory
+#: model:ir.actions.act_window,name:sugar_laboratory.action_sugar_malfunction_report
+#: model:ir.model,name:sugar_laboratory.model_lab_malfunction_report
+msgid "Sugar Daily Malfunction Report"
+msgstr "تقرير الاعطال اليومي للسكر"
+
+#. module: sugar_laboratory
+#: model:ir.actions.act_window,name:sugar_laboratory.action_sugar_operation_daily_report
+#: model:ir.model,name:sugar_laboratory.model_lab_sugar_daily_operation_report
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_operation_daily_pivot
+msgid "Sugar Daily Operation Report"
+msgstr "تقرير التشغيل اليومي للسكر"
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_operation_daily_search
+msgid "Sugar Daily Operation Report Search"
+msgstr ""
 
 #. module: sugar_laboratory
 #: model:ir.module.category,name:sugar_laboratory.module_category_sugar_laboratory
@@ -1288,9 +1383,24 @@ msgid "Sugar Laboratory"
 msgstr "الرقابة والجودة"
 
 #. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunction_report__line_id
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__line_id
 msgid "Sugar Line"
 msgstr "خط الانتاج"
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_malfunction_report_graph
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_malfunction_report_pivot
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_malfunction_report_search
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_malfunction_report_tree
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_malfunction_tree
+msgid "Sugar Lines Malfunctions Report"
+msgstr "تقرير اعطال خطوط انتاج السكر"
+
+#. module: sugar_laboratory
+#: model:ir.ui.menu,name:sugar_laboratory.menu_sugar_malfunction_daily_report
+msgid "Sugar Malfunction Report"
+msgstr "تقرير اعطال اليوميه"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__sugar_moulas_rate
@@ -1298,9 +1408,16 @@ msgid "Sugar Moulas rate"
 msgstr "سكر % جم مولاس"
 
 #. module: sugar_laboratory
+#: model:ir.ui.menu,name:sugar_laboratory.menu_sugar_operation_daily_report
+msgid "Sugar Operation Daily Report"
+msgstr "تقرير نتا|ج التشغيل اليوميه"
+
+#. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season_estimate_line__sugar_produced_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__sugar_produced_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__sugar_produced_ton
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__sugar_produced_ton
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__sugar_produced_ton
 msgid "Sugar Produced - Ton"
 msgstr "اجمالي السكر المنتج(طن)"
 
@@ -1312,16 +1429,18 @@ msgstr "انواع التحاليل"
 #. module: sugar_laboratory
 #: model:res.groups,name:sugar_laboratory.sugar_lab_supervisor
 msgid "Supervisor"
-msgstr ""
+msgstr "مدير اداره"
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__can_sweetness
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__can_sweetness
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__can_sweetness
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__can_sweetness
 msgid "Sweetness"
 msgstr "الحلاوة"
 
 #. module: sugar_laboratory
+#: model:ir.model.fields,help:sugar_laboratory.field_lab_malfunctions_branch__season_id
 #: model:ir.model.fields,help:sugar_laboratory.field_lab_season_estimate__season_id
 #: model:ir.model.fields,help:sugar_laboratory.field_lab_season_estimate_line__season_id
 #: model:ir.model.fields,help:sugar_laboratory.field_lab_sugar_analysis__branch_id
@@ -1343,9 +1462,19 @@ msgid "This report performs Net analysis on Sugar Lab Transaction."
 msgstr "تقرير اجمالي للرقابة والجودة"
 
 #. module: sugar_laboratory
+#: model_terms:ir.actions.act_window,help:sugar_laboratory.action_sugar_malfunction_report
+msgid "This report performs analysis on Daily Malfunctions."
+msgstr ""
+
+#. module: sugar_laboratory
 #: model_terms:ir.actions.act_window,help:sugar_laboratory.action_sugar_analysis_report
 msgid "This report performs analysis on Sugar Lab Transaction."
 msgstr "تقرير تفصيلي للرقابة والجودة"
+
+#. module: sugar_laboratory
+#: model_terms:ir.actions.act_window,help:sugar_laboratory.action_sugar_operation_daily_report
+msgid "This report performs analysis on Sugar Net Analysis Transaction."
+msgstr ""
 
 #. module: sugar_laboratory
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season__year_to
@@ -1364,11 +1493,16 @@ msgid "Transaction"
 msgstr "الحركات"
 
 #. module: sugar_laboratory
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunction_report__entry_date
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_malfunctions_branch__entry_date
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__entry_date
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_net_report__entry_date
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__entry_date
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__entry_date
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_net_search
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_lab_analysis_search
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_malfunction_report_search
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.view_sugar_operation_daily_search
 msgid "Transaction Date"
 msgstr "تاريخ الحركة"
 
@@ -1453,7 +1587,7 @@ msgstr "لا يمكن حذف الارقام التقديرية للموسم بع
 #: code:addons/sugar_laboratory/models/lab_sugar_analysis.py:0
 #, python-format
 msgid "You can not delete a Sugar Entry Which Is Not In Draft State."
-msgstr ""
+msgstr "لا يمكن حذف يومية حالتها ليست مسوده !"
 
 #. module: sugar_laboratory
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.lab_sugar_analysis_view_form
@@ -1462,13 +1596,23 @@ msgstr ""
 
 #. module: sugar_laboratory
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.season_estimate_view_form
+msgid "moulas_qty_ton"
+msgstr "كمية المولاس ظ طن"
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.season_estimate_view_form
+msgid "season_days"
+msgstr "ايام الموسم"
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.season_estimate_view_form
 msgid "season_estimate"
-msgstr ""
+msgstr "مستهدف الموسم"
 
 #. module: sugar_laboratory
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.season_estimate_view_form
 msgid "season_estimate_daily"
-msgstr ""
+msgstr "مستهدف الموسم يومي"
 
 #. module: sugar_laboratory
 #: model_terms:ir.ui.view,arch_db:sugar_laboratory.season_view_form
@@ -1479,8 +1623,14 @@ msgstr ""
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_season_estimate__state
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis__state
 #: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_analysis_report__state
+#: model:ir.model.fields,field_description:sugar_laboratory.field_lab_sugar_daily_operation_report__state
 msgid "state"
 msgstr "الحاله"
+
+#. module: sugar_laboratory
+#: model_terms:ir.ui.view,arch_db:sugar_laboratory.season_estimate_view_form
+msgid "sugar_produced_ton"
+msgstr ""
 
 #. module: sugar_laboratory
 #: code:addons/sugar_laboratory/models/lab_season.py:0
