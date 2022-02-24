@@ -154,13 +154,24 @@ class LabSugarAnalysis(models.Model):
     def _compute_total_produced(self):
         self.sugar_produced_ton = (self.sugar_a_ton or 0.0) + (self.sugar_brown_ton or 0.0) + (self.sugar_b_ton or 0.0)
 
+    def _check_user_branch(self):
+        if self.env.user.branch_id:
+            if self.env.user.branch_id != self.branch_id:
+                raise ValidationError(_("You Are Not Allowed To Deal With This Branch !"))
+
     def action_branch_approved(self):
+        if self._check_user_branch():
+            return
         self.state = 'branchApproved'
 
     def action_dept_approved(self):
+        if self._check_user_branch():
+            return
         self.state = 'deptApproved'
 
     def action_approved(self):
+        if self._check_user_branch():
+            return
         self.state = 'approved'
 
     def action_set_draft(self):
