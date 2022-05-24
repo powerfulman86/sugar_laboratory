@@ -146,8 +146,8 @@ class LabSugarAnalysis(models.Model):
     @api.onchange('sugar_a_ton', 'sugar_b_ton', 'can_crashed_ton')
     def _can_sugar_rate(self):
         if self.can_crashed_ton != 0:
-            self.can_sugar_rate = ((((self.sugar_a_ton or 0.0) + ((self.sugar_b_ton or 0.0) * .9)) * 100) / (
-                    self.can_crashed_ton or 0.0))
+            self.can_sugar_rate = ((((self.sugar_a_ton or 0.0) + (self.sugar_brown_ton or 0.0) + (
+                    (self.sugar_b_ton or 0.0) * .9)) * 100) / (self.can_crashed_ton or 0.0))
 
     @api.depends('sugar_a_ton', 'sugar_brown_ton', 'sugar_b_ton')
     @api.onchange('sugar_a_ton', 'sugar_brown_ton', 'sugar_b_ton')
